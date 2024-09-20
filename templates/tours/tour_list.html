@@ -1,0 +1,104 @@
+{#{% extends "base.html" %}#}
+{#{% include "includes/header.html" %}#}
+{#{% load location_tour_filter %}#}
+{#{% block content %}#}
+{#  <main class="container my-5">#}
+{#    <div class="text-center">#}
+{#      <h1 class="display-4"></h1>#}
+{#      <p class="lead">Here you can see all the locations that interest you. Do not forget to leave an impression of the chosen location so that in the future people can also pay attention to it.</p>#}
+{#      <h1 class="display-4">Locations:</h1>#}
+{#    </div>#}
+{#    <div id="task-status" data-task-id="{{ task_id }}"></div>#}
+{##}
+{#    {% if tour_list %}#}
+{#      <div class="d-flex flex-column align-items-stretch"> <!-- Флекс-контейнер для вертикальной раскладки -->#}
+{#        {% for tour in tour_list %}#}
+{#          <div class="d-flex align-items-stretch mb-4"> <!-- Убираем колонки, делаем блок на всю ширину -->#}
+{#            <div class="row g-0 border rounded overflow-hidden flex-md-row shadow-sm w-100" style="height: 255px;"> <!-- Устанавливаем фиксированную высоту и полную ширину -->#}
+{#              <div class="col p-4 d-flex flex-column position-static">#}
+{#                <strong class="d-inline-block mb-2 text-primary">#}
+{#                  <span class="text-dark">Country: {{ tour.place }}</span>#}
+{#                </strong>#}
+{#                <strong class="d-inline-block mb-2 text-primary">#}
+{#                  <span class="text-dark">Location: {{ tour|join_locations }}</span>#}
+{#                </strong>#}
+{#                <h3 id="tour_name" class="mb-0">{{ tour.name }}</h3>#}
+{#                <p class="card-text mb-auto text-secondary">#}
+{#                  <i>{{ tour.description|truncatewords:20 }}</i>#}
+{#                </p>#}
+{#                <p class="mt-3">#}
+{#                  <a href="{{ tour.get_absolute_url }}">Continue reading</a>#}
+{#                </p>#}
+{#              </div>#}
+{##}
+{#              <div class="col-auto d-flex align-items-center justify-content-center"> <!-- Блок с именем вместо изображения -->#}
+{#                <h1 style="font-family: 'Impact', sans-serif; width: 250px;" class="text-primary">{{ tour.name }}</h1> <!-- Показываем имя крупным текстом -->#}
+{#              </div>#}
+{#            </div>#}
+{#          </div>#}
+{#        {% endfor %}#}
+{#      </div>#}
+{#    {% else %}#}
+{#      <div class="d-flex justify-content-center">#}
+{#        <h1>No locations yet</h1>#}
+{#      </div>#}
+{#    {% endif %}#}
+{#  </main>#}
+{#{% endblock %}#}
+{#{% include "includes/pagination.html" %}#}
+{##}
+{##}
+{##}
+{% extends "index.html" %}
+{% include "includes/header.html" %}
+{% load location_tour_filter %}
+{% block content %}
+  <!-- -------- START Locations Section with full-width cards and names -------- -->
+  <section class="py-9">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h1 class="display-4">Tours</h1>
+        <p class="lead">Here you can see all the tours that interest you. Do not forget to leave an impression of the chosen location so that in the future people can also pay attention to it.</p>
+      </div>
+
+      {% if tour_list %}
+        <div class="row">
+          {% for tour in tour_list %}
+            <div class="col-12 mb-4"> <!-- Занимает всю ширину -->
+              <div class="card border shadow-sm w-100">
+                <div class="row g-0">
+                  <div class="col-12 d-flex align-items-center justify-content-center"> <!-- Центрируем имя -->
+                    <h1 class="text-primary text-center w-100 p-4" style="font-family: 'Impact', sans-serif;">
+                      {{ tour.name }}
+                    </h1>
+                  </div>
+                </div>
+                <div class="row g-0">
+                  <div class="col p-4">
+                    <strong class="d-block text-primary">Country: {{ tour.place }}</strong>
+                    <strong class="d-block text-primary">Location: {{ tour|join_locations }}</strong>
+{#                    <strong class="d-block text-primary">Location: {{ location.location }}</strong>#}
+{#                    <h3 class="mb-3">{{ location.name }}</h3>#}
+                    <p class="text-secondary mb-3">
+                      <i>{{ tour.description|truncatewords:25 }}</i>
+                    </p>
+                    <a href="{{ tour.get_absolute_url }}" class="text-primary icon-move-right">Continue reading
+                      <i class="fas fa-arrow-right text-sm ms-1"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="d-flex justify-content-center">
+          <h2>No locations yet</h2>
+        </div>
+      {% endif %}
+
+      {% include "includes/pagination.html" %}
+    </div>
+  </section>
+  <!-- -------- END Locations Section with full-width cards and names -------- -->
+{% endblock %}

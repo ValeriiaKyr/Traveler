@@ -1,0 +1,42 @@
+{#{% if is_paginated %}#}
+{#    <ul class="pagination">#}
+{#      {% if page_obj.has_previous %}#}
+{#        <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Prev</a></li>#}
+{#      {% endif %}  #}
+{#    <li class="page-item active"><span class="page-link">{{ page_obj.number }} of {{ paginator.num_pages }}</span></li>#}
+{#    {% if page_obj.has_next %}#}
+{#        <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>#}
+{#    {% endif %} #}
+{#    </ul>#}
+{#{% endif %}#}
+{% if is_paginated %}
+<section class="py-7">
+  <div class="container">
+    <div class="row justify-content-center py-2"> <!-- Центрируем весь ряд -->
+      <div class="col-lg-4 col-md-6 d-flex justify-content-center"> <!-- Центрируем колонку и уменьшаем её ширину -->
+        <ul class="pagination pagination-primary">
+          {% if page_obj.has_previous %}
+          <li class="page-item me-2"> <!-- Добавляем отступ справа для кнопки -->
+            <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+              <span aria-hidden="true"><i class="material-icons" aria-hidden="true">chevron_left</i></span>
+            </a>
+          </li>
+          {% endif %}
+
+          <li class="page-item active mx-2"> <!-- Отступы справа и слева для цифры -->
+            {{ page_obj.number }} of {{ paginator.num_pages }}
+          </li>
+
+          {% if page_obj.has_next %}
+          <li class="page-item ms-2"> <!-- Добавляем отступ слева для кнопки -->
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+              <span aria-hidden="true"><i class="material-icons" aria-hidden="true">chevron_right</i></span>
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}

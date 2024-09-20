@@ -1,0 +1,72 @@
+{% extends "index.html" %}
+{% include "includes/header.html" %}
+{% load location_tour_filter %}
+{% block content %}
+  <!-- -------- START Location Detail Section with full-width text and improved formatting -------- -->
+  <section class="py-9">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h1 class="display-4">{{ tour.name }}</h1> <!-- Заголовок с именем локации -->
+        <p class="lead">Detailed information about the selected tour.</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <!-- Карточка с основными данными -->
+        <div class="col-lg-8 mb-4">
+          <div class="card border shadow-sm">
+            <div class="p-4">
+              <h2 class="text-primary mb-3">Tour Details</h2>
+              <p><strong>Location:</strong> {{ tour.location }}</p>
+              <p><strong>Place:</strong> {{ tour.place }}</p>
+              <p><strong>Distance:</strong> {{ tour.distance }} km</p>
+              <p><strong>Duration:</strong> {{  tour.duration }} hours</p>
+              <p><strong>Locations you will visit on this tour:</strong> {{ tour|join_locations }}</p>
+              <p><strong>Description:</strong></p>
+              <p class="text-secondary">{{ tour.description }}</p> <!-- Добавлен класс для цвета текста -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка с отзывами -->
+        <div class="col-lg-8 mb-4">
+          <div class="card border shadow-sm">
+            <div class="p-4">
+              <h2 class="text-primary mb-3">Impressions</h2>
+{#              {% if impressions %}#}
+{#                {% for impression in impressions %}#}
+{#                  <div class="border-bottom mb-3 pb-3">#}
+{#                    <p><strong>{{ impression.user_name }}:</strong></p>#}
+{#                    <p>{{ impression.text }}</p>#}
+{#                    <p class="text-muted">{{ impression.date|date:"F j, Y, g:i a" }}</p>#}
+{#                  </div>#}
+{#                {% endfor %}#}
+{#              {% else %}#}
+{#                <p>No impressions yet for this location. Be the first to leave one!</p>#}
+{#              {% endif %}#}
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка для добавления отзыва -->
+        <div class="col-lg-8 mb-4">
+          <div class="card border shadow-sm">
+            <div class="p-4">
+              <h2 class="text-primary mb-3">Leave Your Impression</h2>
+{#              <form method="post" action="{% url 'add_route_impression' tour.id %}">#}
+{#                {% csrf_token %}#}
+{#                <div class="form-group">#}
+{#                  <label for="impressionText">Your impression:</label>#}
+{#                  <textarea id="impressionText" name="text" class="form-control" rows="4" required></textarea>#}
+{#                </div>#}
+{#                <button type="submit" class="btn btn-primary mt-3">Submit</button>#}
+{#              </form>#}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- -------- END Location Detail Section with full-width text and improved formatting -------- -->
+{% endblock %}
+
+{% include "includes/footer.html" %}

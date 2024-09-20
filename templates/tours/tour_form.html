@@ -1,0 +1,60 @@
+{% extends "index.html" %}
+{% include "includes/header.html" %}
+{% block content %}
+<section class="mt-7">
+  <div class="container py-4">
+    <div class="row">
+      <div class="col-lg-7 mx-auto d-flex justify-content-center flex-column">
+        <h3 class="text-center">Create your own route</h3>
+        <form role="form" id="contact-form" method="post" autocomplete="off" action="" novalidate>
+          {% csrf_token %}
+          <div class="card-body">
+
+            <!-- Route Name -->
+            <div class="form-group mb-4">
+              <label class="form-label" for="id_name">Route Name</label><br>
+              {{ form.name }}
+            </div>
+
+            <!-- Distance -->
+            <div class="form-group mb-4">
+              <label class="form-label" for="id_distance">Distance</label><br>
+              {{ form.distance }}
+            </div>
+
+            <!-- Duration -->
+            <div class="form-group mb-4">
+              <label class="form-label" for="id_duration">Duration</label><br>
+              {{ form.duration }}
+            </div>
+
+            <!-- Place -->
+            <div class="form-group mb-4">
+              <label class="form-label" for="id_place">Place</label><br>
+              {{ form.place }}
+            </div>
+
+            <!-- Description -->
+            <div class="form-group mb-4">
+              <label class="form-label" for="id_description">Description</label><br>
+              {{ form.description }}
+            </div>
+
+            <!-- Location -->
+            <div class="form-group mb-4">
+              <label class="form-label" for="id_location">Location</label><br>
+              {{ form.location }}
+            </div>
+
+            <!-- Submit Button -->
+            <div class="col-md-12">
+              <button type="submit" class="btn bg-gradient-dark w-100">Create</button>
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

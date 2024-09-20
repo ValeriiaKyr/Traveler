@@ -1,0 +1,29 @@
+<header class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Traveler.</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url "tours:index" %}">Home page</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url "tours:tour-list" %}">Tours</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url "tours:locations-list" %}">Locations</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                  {% if user.is_authenticated %}
+                    <a class="btn btn-outline-light me-2" href="#">Log out</a>
+                  {% else %}
+                    <a class="btn btn-outline-light me-2" href="{% url "login" %}">Login</a>
+                  {% endif %}
+                    <a class="btn btn-primary" href="#">Sing up</a>
+                </div>
+            </div>
+        </div>
+    </header>

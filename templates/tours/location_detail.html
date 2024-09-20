@@ -1,0 +1,153 @@
+{#{% extends "base.html" %}#}
+{#{% include "includes/header.html" %}#}
+{#{% block content %}#}
+{#  <main class="container my-5">#}
+{#    <div class="text-center">#}
+{#      <h1 class="display-4">{{ location.name }}</h1> <!-- Заголовок с именем локации -->#}
+{#      <p class="lead">Detailed information about the selected location.</p>#}
+{#    </div>#}
+{#    #}
+{#    <div class="row justify-content-center"> <!-- Центрируем контент -->#}
+{#      <div class="col-md-8 d-flex flex-column align-items-center"> <!-- Делаем блок на всю ширину с центровкой -->#}
+{##}
+{#        <div class="border rounded shadow-sm p-4 mb-4 w-100"> <!-- Карточка с основными данными -->#}
+{#          <h2 class="text-primary mb-3">Location Details</h2>#}
+{#          <p><strong>Country:</strong> {{ location.country }}</p>#}
+{#          <p><strong>City:</strong> {{ location.city }}</p>#}
+{#          <p><strong>Location:</strong> {{ location.location }}</p>#}
+{#          <p><strong>Description:</strong> {{ location.description }}</p>#}
+{#          {% if location.opening_time and location.closing_time %}#}
+{#            <p><strong>Working hours:</strong> {{ location.opening_time }} - {{ location.closing_time }}</p>#}
+{#          {% endif %}#}
+{#          {% if location.price != 0 %}#}
+{#            <p><strong>Cost of visit:</strong> {{ location.price }}€</p>#}
+{#          {% endif %}#}
+{#          {% if location.image %}#}
+{#            <img src="{{ location.image.url }}" width="400" class="img-fluid">#}
+{#          {% endif %}#}
+{#        </div>#}
+{##}
+{#        <div class="border rounded shadow-sm p-4 mb-4 w-100"> <!-- Карточка с отзывами -->#}
+{#          <h2 class="text-primary mb-3">Impressions</h2>#}
+{#          {% if impressions %}#}
+{#            {% for impression in impressions %}#}
+{#              <div class="border-bottom mb-3 pb-3">#}
+{#                <p><strong>{{ impression.user_name }}:</strong></p>#}
+{#                <p>{{ impression.text }}</p>#}
+{#                <p class="text-muted">{{ impression.date|date:"F j, Y, g:i a" }}</p>#}
+{#              </div>#}
+{#            {% endfor %}#}
+{#          {% else %}#}
+{#            <p>No impressions yet for this location. Be the first to leave one!</p>#}
+{#          {% endif %}#}
+{#        </div>#}
+{##}
+{#        <div class="border rounded shadow-sm p-4 w-100"> <!-- Карточка для добавления отзыва -->#}
+{#          <h2 class="text-primary mb-3">Leave Your Impression</h2>#}
+{#          <form method="post" action="{% url 'add_impression' location.id %}">#}
+{#            {% csrf_token %}#}
+{#            <div class="form-group">#}
+{#              <label for="impressionText">Your impression:</label>#}
+{#              <textarea id="impressionText" name="text" class="form-control" rows="4" required></textarea>#}
+{#            </div>#}
+{#            <button type="submit" class="btn btn-primary mt-3">Submit</button>#}
+{#          </form>#}
+{#        </div>#}
+{##}
+{#      </div>#}
+{#    </div>#}
+{#  </main>#}
+{#{% endblock %}#}
+{##}
+{#{% include "includes/footer.html" %}#}
+
+
+{% extends "index.html" %}
+{% include "includes/header.html" %}
+{% block content %}
+  <!-- -------- START Location Detail Section with borders and images -------- -->
+  <section class="py-9">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h1 class="display-4">{{ location.name }}</h1> <!-- Заголовок с именем локации -->
+        <p class="lead">Detailed information about the selected location.</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8 mb-4">
+          <div class="card border shadow-sm">
+            <div class="row g-0">
+              <div class="col-md-4">
+                {% if location.image %}
+                  <img src="{{ location.image.url }}" alt="{{ location.name }}" class="img-fluid h-100 w-100 rounded-start" style="object-fit: cover;">
+                {% else %}
+                  <div class="d-flex justify-content-center align-items-center bg-secondary" style="height: 100%; width: 100%;">
+                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                      <title>Placeholder</title>
+                      <rect width="100%" height="100%" fill="#55595c"></rect>
+                      <text x="50%" y="50%" fill="#eceeef" dy=".3em">No picture</text>
+                    </svg>
+                  </div>
+                {% endif %}
+              </div>
+
+              <div class="col-md-8">
+                <div class="p-3">
+                  <h2 class="text-primary mb-3">Location Details</h2>
+                  <p><strong>Country:</strong> {{ location.country }}</p>
+                  <p><strong>City:</strong> {{ location.city }}</p>
+                  <p><strong>Location:</strong> {{ location.location }}</p>
+                  <p><strong>Description:</strong> {{ location.description }}</p>
+                  {% if location.opening_time and location.closing_time %}
+                    <p><strong>Working hours:</strong> {{ location.opening_time }} - {{ location.closing_time }}</p>
+                  {% endif %}
+                  {% if location.price != 0 %}
+                    <p><strong>Cost of visit:</strong> {{ location.price }}€</p>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-8 mb-4">
+          <div class="card border shadow-sm">
+            <div class="p-3">
+              <h2 class="text-primary mb-3">Impressions</h2>
+              {# {% if impressions %} #}
+              {#   {% for impression in impressions %} #}
+              {#     <div class="border-bottom mb-3 pb-3"> #}
+              {#       <p><strong>{{ impression.user_name }}:</strong></p> #}
+              {#       <p>{{ impression.text }}</p> #}
+              {#       <p class="text-muted">{{ impression.date|date:"F j, Y, g:i a" }}</p> #}
+              {#     </div> #}
+              {#   {% endfor %} #}
+              {# {% else %} #}
+              <p>No impressions yet for this location. Be the first to leave one!</p>
+              {# {% endif %} #}
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-8 mb-4">
+          <div class="card border shadow-sm">
+            <div class="p-3">
+              <h2 class="text-primary mb-3">Leave Your Impression</h2>
+              {# <form method="post" action="{% url 'add_impression' location.id %}"> #}
+              {#   {% csrf_token %} #}
+              {#   <div class="form-group"> #}
+              {#     <label for="impressionText">Your impression:</label> #}
+              {#     <textarea id="impressionText" name="text" class="form-control" rows="4" required></textarea> #}
+              {#   </div> #}
+              {#   <button type="submit" class="btn btn-primary mt-3">Submit</button> #}
+              {# </form> #}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- -------- END Location Detail Section with borders and images -------- -->
+{% endblock %}
+
+{% include "includes/footer.html" %}
