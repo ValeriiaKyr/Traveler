@@ -1,0 +1,311 @@
+{
+    "Tour": [
+        {
+            "id": 3,
+            "name": "Historical Center of Berlin Tour",
+            "description": "Embark on an unforgettable journey through Berlin's historical heart, where the city\u2019s rich past meets its vibrant present.\r\n\r\nStart at Brandenburg Gate, Berlin\u2019s iconic landmark and a symbol of German reunification. As you stand beneath its grand neoclassical columns, you\u2019ll begin to sense the historical significance that makes this place a must-see.\r\n\r\nNext, stroll over to the Reichstag, the seat of the German parliament. Admire its stunning architecture, especially the modern glass dome designed by Sir Norman Foster. For a truly memorable experience, consider booking a tour to ascend the dome and enjoy panoramic views of Berlin\u2019s sprawling urban landscape.\r\n\r\nContinue your walk to the Memorial to the Murdered Jews of Europe. This poignant site, consisting of 2,711 concrete slabs of varying heights, offers a contemplative space to reflect on the Holocaust and its impact. The memorial's stark, minimalist design powerfully conveys the enormity of the tragedy.\r\n\r\nFrom there, make your way to Potsdamer Platz, a vibrant and bustling square that showcases Berlin\u2019s contemporary side. Marvel at the innovative architecture of the Sony Center and explore the surrounding shopping complexes, cafes, and cultural venues.\r\n\r\nConclude your tour at Alexanderplatz, a historic square that\u2019s a blend of old and new Berlin. The square is dominated by the striking Fernsehturm (TV Tower), an iconic feature of the city\u2019s skyline. You might want to take a ride up the tower for a sweeping view of Berlin and its surroundings.\r\n\r\nThis tour covers approximately 4-5 kilometers and can be comfortably completed in 1.5 to 2 hours, allowing you to soak in Berlin\u2019s rich history and modern vibrancy at a leisurely pace. Whether you're a history buff or a culture enthusiast, this route offers a comprehensive glimpse into the essence of Berlin.",
+            "duration": "02:00:00",
+            "distance": 5.0,
+            "place": "Berlin, Germany"
+        },
+        {
+            "id": 2,
+            "name": "Historical Center of Warsaw Tour",
+            "description": "Explore the heart of Warsaw on a captivating journey through its historic and picturesque landmarks.\r\n\r\nBegin your adventure in the Old Town (Stare Miasto). This charming district, meticulously restored after World War II, features narrow cobblestone streets, historic buildings, and cozy cafes, offering a glimpse into Warsaw's past and present.\r\n\r\nFrom there, head to the Royal Castle. This grand residence of Polish monarchs boasts opulent rooms and an impressive art collection. Explore the richly decorated interiors that reflect the grandeur of Poland\u2019s royal history.\r\n\r\nContinue your walk to the Market Square (Rynek), the vibrant center of the Old Town. The square is surrounded by colorful townhouses and is home to the iconic Warsaw Mermaid statue. It\u2019s a great spot to relax in one of the many restaurants or browse through local shops.\r\n\r\nNext, visit the Church of St. John. This Gothic church, with its ornate interior and historic significance, offers a serene atmosphere. Don\u2019t miss the opportunity to climb the bell tower for a panoramic view of the Old Town.\r\n\r\nStroll over to the Barbican, a historic defensive structure that once formed part of the city\u2019s fortifications. This well-preserved bastion provides a glimpse into the medieval defensive architecture of Warsaw.\r\n\r\nThen, head to the Royal \u0141azienki (\u0141azienki Park). One of Warsaw\u2019s largest and most beautiful parks, it features the stunning \u0141azienki Palace, surrounded by tranquil gardens, sculptures, and monuments. Enjoy a leisurely walk through this green oasis, which also includes the famous Chopin Monument.\r\n\r\nFinally, visit Pi\u0142sudski Park, centrally located and known for its memorial to J\u00f3zef Pi\u0142sudski, a key figure in Polish history. The park is dotted with green avenues, making it a peaceful end to your tour.\r\n\r\nThis route covers approximately 5-6 kilometers and typically takes 2-3 hours, depending on your pace and how much time you spend at each attraction. Whether you're interested in history, architecture, or simply enjoying beautiful parks, this tour offers a comprehensive experience of Warsaw's historical center.",
+            "duration": "02:30:00",
+            "distance": 6.0,
+            "place": "Warsaw, Poland"
+        },
+        {
+            "id": 1,
+            "name": "Route for Contemporary and Modern Art",
+            "description": "Rich with prestigious museums, unconventional galleries, and fresh creative talent, Barcelona's contemporary art scene is truly impressive. For those visiting for the first time, trying to see everything in a short time can be overwhelming. This (approximately) 2-hour route will provide an excellent introduction to the subject.\r\n\r\nOur ART route, aptly named \"Modern and Contemporary,\" is a cultural journey through the Catalan capital's modernist heritage, covering not only iconic landmarks like Park G\u00fcell but also lesser-known, unique sites.\r\n\r\nSurrealist Gaud\u00ed Buildings: Sagrada Fam\u00edlia, Casa Mil\u00e0, Casa Batll\u00f3, Casa Vicens, G\u00fcell Winery\r\nGran Teatre del Liceu\r\nExquisite Hospital de Sant Pau",
+            "duration": "02:00:00",
+            "distance": 3.0,
+            "place": "Barcelona (Spain)"
+        },
+        {
+            "id": 6,
+            "name": "\u0432\u0432\u0432\u0432\u0432\u0432",
+            "description": "\u0447\u0441\u0430\u043c\u043f\u0440\u043e\u044c",
+            "duration": "02:00:00",
+            "distance": 2.0,
+            "place": "Europe"
+        }
+    ],
+    "Tourist": [
+        {
+            "id": 2,
+            "password": "pbkdf2_sha256$870000$Z2c8Nmnn0nCV1V4F4SvHmU$OnJ0okN6MF9/V6CjKnZV07FuZf9VftuCvzPCN1zUZbY=",
+            "last_login": "2024-09-23T08:12:55.496634+00:00",
+            "is_superuser": true,
+            "username": "admin",
+            "first_name": "",
+            "last_name": "",
+            "email": "admin@admin.com",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2024-09-20T15:45:54.276199+00:00"
+        },
+        {
+            "id": 1,
+            "password": "pbkdf2_sha256$870000$9Ox56Msvkn10G8zBUznxzT$KaVIHaE1iJH98JaFGTT/Kqq2FzgtGIHwPpio0kNeqhU=",
+            "last_login": "2024-09-22T15:37:48.913659+00:00",
+            "is_superuser": true,
+            "username": "lera",
+            "first_name": "",
+            "last_name": "",
+            "email": "lera@admin.com",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2024-09-20T12:42:58.089991+00:00"
+        },
+        {
+            "id": 3,
+            "password": "pbkdf2_sha256$870000$QpzGy1Zb2IDjSHS6dhKpg6$1wV4yAbCq7pTetgpjofiwLpWWhL4dTGN2kyApb8T/+g=",
+            "last_login": "2024-09-22T14:56:15.376025+00:00",
+            "is_superuser": false,
+            "username": "leraadmin",
+            "first_name": "admin",
+            "last_name": "admin",
+            "email": "admin@a.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-09-22T14:56:00.545533+00:00"
+        }
+    ],
+    "Location": [
+        {
+            "id": 1,
+            "name": "Alexanderplatz",
+            "country": "Germany",
+            "city": "Berlin",
+            "description": "The square features several notable attractions, including the Fernsehturm (TV Tower), which offers panoramic views of Berlin, the World Clock, and various shopping centers and restaurants. For visiting specific attractions like the TV Tower, you would need to check their individual opening hours and ticket prices.",
+            "location": "Alexanderplatz, 10178 Berlin, Germany",
+            "opening_time": null,
+            "closing_time": null,
+            "price": 0.0,
+            "image": "https://res.cloudinary.com/dp0kcgmnd/image/upload/v1727104743/ep9zgss97ms3angif0an.webp"
+        },
+        {
+            "id": 2,
+            "name": "Barbakan",
+            "country": "Poland",
+            "city": "Warsaw",
+            "description": "Barbican (Barbakan) is a historic defensive structure located in the Old Town of Warsaw, Poland. This impressive fortress was built in the late 15th and early 16th centuries as part of the city's fortifications. It served as a military stronghold and a gatehouse for the entrance to the Old Town.",
+            "location": "ul. Nowomiejska, 00-272 Warsaw, Poland",
+            "opening_time": "10:00:00",
+            "closing_time": "16:00:00",
+            "price": 3.0,
+            "image": "https://res.cloudinary.com/dp0kcgmnd/image/upload/v1727104809/eohgeodr7debxldxcgxr.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Brandenburg Gate",
+            "country": "Germany",
+            "city": "Berlin",
+            "description": "Brandenburg Gate is an iconic landmark in Berlin, Germany. Located at Pariser Platz, 10117 Berlin, this neoclassical monument was built between 1788 and 1791 and is a symbol of Germany's reunification.\r\nVisitors can explore the gate at their leisure, and it is a popular spot for both tourists and locals. For additional historical context or guided tours, it is best to check with local tour operators or visitor information centers.",
+            "location": "Pariser Platz, 10117 Berlin",
+            "opening_time": null,
+            "closing_time": null,
+            "price": 0.0,
+            "image": "https://res.cloudinary.com/dp0kcgmnd/image/upload/v1727104844/mxfiuyd9gnhyl2b8uxr9.webp"
+        },
+        {
+            "id": 4,
+            "name": "Casa Batll\u00f3",
+            "country": "Spain",
+            "city": "Barcelona",
+            "description": "Casa Batll\u00f3 is a stunning modernist building designed by Antoni Gaud\u00ed, located at Passeig de Gr\u00e0cia, 43 in Barcelona. Completed in 1906, it is renowned for its vibrant, colorful fa\u00e7ade, wavy shapes, and intricate details, reminiscent of a fantastical underwater world. This UNESCO World Heritage Site is celebrated for its imaginative and innovative architecture.",
+            "location": "Passeig de Gr\u00e0cia, 43, Barcelona, Spain",
+            "opening_time": "09:00:00",
+            "closing_time": "21:00:00",
+            "price": 35.0,
+            "image": "https://res.cloudinary.com/dp0kcgmnd/image/upload/v1727100632/fcgzvfqzxxlbxxrd8hgd.avif"
+        },
+        {
+            "id": 5,
+            "name": "Casa Vicens",
+            "country": "Spain",
+            "city": "Barcelona",
+            "description": "Casa Vicens is an early masterpiece by Antoni Gaud\u00ed, located at Carrer de les Carolines, 20-26, 08012 Barcelona. Completed in 1888, it is known for its eclectic design, combining Moorish, Oriental, and neoclassical elements, with a striking tiled fa\u00e7ade and intricate interior details.",
+            "location": "Carrer de les Carolines, 20-26, 08012 Barcelona",
+            "opening_time": "10:00:00",
+            "closing_time": "20:00:00",
+            "price": 20.0,
+            "image": "https://res.cloudinary.com/dp0kcgmnd/image/upload/v1727104894/fsd2zu8wfs3eozla0aee.jpg"
+        },
+        {
+            "id": 7,
+            "name": "Gran Teatre del Liceu",
+            "country": "Spain",
+            "city": "Barcelona",
+            "description": "Gran Teatre del Liceu is Barcelona's historic opera house, located at La Rambla, 51-59, 08002 Barcelona. Opened in 1847, it is renowned for its opulent architecture and significant role in the city's cultural life.",
+            "location": "La Rambla, 51-59, 08002 Barcelona",
+            "opening_time": null,
+            "closing_time": null,
+            "price": 20.0,
+            "image": "https://res.cloudinary.com/dp0kcgmnd/image/upload/v1727104907/lglukzcsukguvktc92xy.jpg"
+        },
+        {
+            "id": 8,
+            "name": "Hospital de Sant Pau",
+            "country": "Spain",
+            "city": "Barcelona",
+            "description": "Hospital de Sant Pau is a stunning example of modernist architecture located at Carrer de Sant Antoni Maria Claret, 167, 08025 Barcelona. Designed by Llu\u00eds Dom\u00e8nech i Montaner and completed in 1930, this former hospital complex is renowned for its intricate mosaics, colorful tiles, and ornate pavilions set within lush gardens. It is now a UNESCO World Heritage Site and serves as a cultural and architectural landmark.",
+            "location": "Carrer de Sant Antoni Maria Claret, 167, 08025 Barcelona",
+            "opening_time": "10:00:00",
+            "closing_time": "18:00:00",
+            "price": 15.0,
+            "image": "https://res.cloudinary.com/dp0kcgmnd/image/upload/v1727104946/wb9dbxso47a3lsnfm2lv.jpg"
+        },
+        {
+            "id": 15,
+            "name": "Katedra \u015bw. Jana",
+            "country": "Poland",
+            "city": "Warsaw",
+            "description": "St. John's Cathedral (Katedra \u015bw. Jana) is a prominent historic church located in the Old Town of Warsaw, Poland. It is known for its Gothic architecture and significant role in the city\u2019s religious and historical events.",
+            "location": "Ul. \u015awi\u0119toja\u0144ska 8, 00-278 Warsaw, Poland",
+            "opening_time": "09:00:00",
+            "closing_time": "05:00:00",
+            "price": 0.0,
+            "image": "https://res.cloudinary.com/dp0kcgmnd/image/upload/v1727105005/hgmbw2hvwixcqtbymymw.jpg"
+        },
+        {
+            "id": 10,
+            "name": "Memorial to the Murdered Jews of Europe",
+            "country": "Germany",
+            "city": "Berlin",
+            "description": "Memorial to the Murdered Jews of Europe, also known as the Holocaust Memorial, is a significant monument located at Cora-Berliner-Stra\u00dfe, 10117 Berlin. Designed by architect Peter Eisenman and opened in 2005, the memorial consists of 2,711 concrete slabs of varying heights arranged in a grid pattern, creating a somber and reflective space dedicated to the Jewish victims of the Holocaust.",
+            "location": "Cora-Berliner-Stra\u00dfe, 10117 Berlin",
+            "opening_time": null,
+            "closing_time": null,
+            "price": 0.0,
+            "image": "https://res.cloudinary.com/dp0kcgmnd/image/upload/v1727105108/ruphhkhhfbyacbwqnues.avif"
+        },
+        {
+            "id": 12,
+            "name": "Old Town (Stare Miasto)",
+            "country": "Warsaw",
+            "city": "Poland",
+            "description": "Old Town (Stare Miasto) in Warsaw, Poland, is the historic heart of the city and a UNESCO World Heritage Site. This charming district features beautifully restored buildings, cobblestone streets, and picturesque squares, reflecting Warsaw's rich history and vibrant cultural life.",
+            "location": "Stare Miasto, Warsaw, Poland",
+            "opening_time": null,
+            "closing_time": null,
+            "price": 0.0,
+            "image": "https://res.cloudinary.com/dp0kcgmnd/image/upload/v1727105219/shb5sbp77atlgijpkqgc.jpg"
+        },
+        {
+            "id": 17,
+            "name": "Park Pi\u0142sudskiego",
+            "country": "Poland",
+            "city": "Warsaw",
+            "description": "Pi\u0142sudski Park (Park Pi\u0142sudskiego), also known as J\u00f3zef Pi\u0142sudski Park, is a prominent park located in the heart of Warsaw, Poland. It is named after J\u00f3zef Pi\u0142sudski, a key figure in Polish history and a leader in the country's struggle for independence.The park is a popular spot for relaxation and recreation, featuring well-maintained pathways, green lawns, and several statues and memorials dedicated to Polish historical figures. It is also known for its central location and scenic views, making it a favorite destination for both locals and visitors. For up-to-date information on any special events or changes in park hours, it\u2019s a good idea to check local sources or the city\u2019s official website.",
+            "location": "Aleje Ujazdowskie, 00-478 Warsaw, Poland",
+            "opening_time": "06:00:00",
+            "closing_time": "10:00:00",
+            "price": 0.0,
+            "image": "https://res.cloudinary.com/dp0kcgmnd/image/upload/v1727105310/eczjvsefenzvfzruy2xb.jpg"
+        },
+        {
+            "id": 11,
+            "name": "Potsdamer Platz",
+            "country": "Germany",
+            "city": "Berlin",
+            "description": "Potsdamer Platz is a major public square and traffic intersection in Berlin, Germany, located in the central district of Mitte. Historically significant and a focal point of Berlin's urban redevelopment, it is known for its modern architecture and vibrant atmosphere.",
+            "location": "Potsdamer Platz, 10785 Berlin, Germany",
+            "opening_time": null,
+            "closing_time": null,
+            "price": 0.0,
+            "image": "https://res.cloudinary.com/dp0kcgmnd/image/upload/v1727105359/ao6ftvkrlcy6dez16xbp.jpg"
+        },
+        {
+            "id": 9,
+            "name": "Reichstag Building",
+            "country": "Germany",
+            "city": "Berlin",
+            "description": "Reichstag Building is the historic seat of the German Parliament located at Platz der Republik 1, 11011 Berlin. Designed by Paul Wallot and completed in 1894, the building is known for its impressive glass dome designed by architect Norman Foster, offering panoramic views of Berlin.\r\nThe site also includes an underground information center with exhibits about the Holocaust, which typically operates from 10:00 AM to 8:00 PM daily. Admission to the information center may require a ticket, which is also free but may be subject to availability.",
+            "location": "Platz der Republik 1, 11011 Berlin",
+            "opening_time": "08:00:00",
+            "closing_time": "12:00:00",
+            "price": 0.0,
+            "image": "https://res.cloudinary.com/dp0kcgmnd/image/upload/v1727105417/freybvmhopnmdrcb4a0b.jpg"
+        },
+        {
+            "id": 14,
+            "name": "Rynek",
+            "country": "Poland",
+            "city": "Warsaw",
+            "description": "Market Square (Rynek) is the central square in the Old Town of Warsaw, Poland. Known for its vibrant atmosphere, historic architecture, and colorful buildings, it serves as a popular destination for both tourists and locals.",
+            "location": "Rynek Starego Miasta, 00-272 Warsaw, Poland",
+            "opening_time": null,
+            "closing_time": null,
+            "price": 0.0,
+            "image": "https://res.cloudinary.com/dp0kcgmnd/image/upload/v1727105462/mh79e7q4qqbvlfu7ogbn.jpg"
+        },
+        {
+            "id": 13,
+            "name": "Zamek Kr\u00f3lewski",
+            "country": "Poland",
+            "city": "Warsaw",
+            "description": "Royal Castle (Zamek Kr\u00f3lewski) is a historic palace located at Plac Zamkowy 4, 00-277 Warsaw, Poland. Originally the residence of Polish monarchs, it was significantly damaged during World War II but has since been meticulously restored. The castle now serves as a museum, showcasing royal artifacts, art collections, and historical exhibits.",
+            "location": "Plac Zamkowy 4, 00-277 Warsaw, Poland",
+            "opening_time": "10:00:00",
+            "closing_time": "16:00:00",
+            "price": 10.0,
+            "image": "https://res.cloudinary.com/dp0kcgmnd/image/upload/v1727105513/xqw5gtxi9panym4ivp13.jpg"
+        },
+        {
+            "id": 16,
+            "name": "\u0141azienki Kr\u00f3lewskie",
+            "country": "Poland",
+            "city": "Warsaw",
+            "description": "\u0141azienki Park (\u0141azienki Kr\u00f3lewskie) is a large and historic park in Warsaw, Poland, known for its beautiful gardens, historical buildings, and serene natural landscapes. It was originally designed in the 18th century as a royal residence and parkland.",
+            "location": "Aleje Ujazdowskie 1, 00-478 Warsaw, Poland",
+            "opening_time": "06:00:00",
+            "closing_time": "20:00:00",
+            "price": 4.0,
+            "image": "https://res.cloudinary.com/dp0kcgmnd/image/upload/v1727105551/rthig6x4xb9cqekbpdoa.jpg"
+        }
+    ],
+    "CommentTour": [
+        {
+            "id": 1,
+            "tour_id": 3,
+            "author_id": 1,
+            "body": "dftf",
+            "created": "2024-09-21T17:04:09.318463+00:00",
+            "updated": "2024-09-21T17:04:09.318486+00:00",
+            "active": true
+        }
+    ],
+    "CommentLocation": [
+        {
+            "id": 1,
+            "location_id": 1,
+            "author_id": 1,
+            "body": "cvbgnhm",
+            "created": "2024-09-21T16:39:59.648392+00:00",
+            "updated": "2024-09-21T16:39:59.648407+00:00",
+            "active": true
+        },
+        {
+            "id": 2,
+            "location_id": 1,
+            "author_id": 1,
+            "body": "\u0430\u043f\u043f\u0430\u043f\u0430\u043f\u0430\u043f",
+            "created": "2024-09-21T16:42:34.542490+00:00",
+            "updated": "2024-09-21T16:42:34.542508+00:00",
+            "active": true
+        },
+        {
+            "id": 3,
+            "location_id": 1,
+            "author_id": 1,
+            "body": "\u043a\u0435\u0442\u0440\u043e\u0438\u043e",
+            "created": "2024-09-21T16:52:17.589178+00:00",
+            "updated": "2024-09-21T16:52:17.589194+00:00",
+            "active": true
+        }
+    ]
+}
