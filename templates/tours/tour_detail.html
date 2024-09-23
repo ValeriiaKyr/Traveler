@@ -16,57 +16,72 @@
           <div class="card border shadow-sm">
             <div class="p-4">
               <h2 class="text-primary mb-3">Tour Details</h2>
-              <p><strong>Location:</strong> {{ tour.location }}</p>
               <p><strong>Place:</strong> {{ tour.place }}</p>
               <p><strong>Distance:</strong> {{ tour.distance }} km</p>
               <p><strong>Duration:</strong> {{  tour.duration }} hours</p>
               <p><strong>Locations you will visit on this tour:</strong> {{ tour|join_locations }}</p>
               <p><strong>Description:</strong></p>
               <p class="text-secondary">{{ tour.description }}</p> <!-- Добавлен класс для цвета текста -->
-            </div>
+              {% if user.is_authenticated %}
+                  <button type="button"  class="btn bg-gradient-primary w-auto me-2"><a href="{% url "tours:tour-update" pk=tour.id %}" style="color: whitesmoke">Update</a></button>
+                <button type="button" class="btn bg-gradient-secondary w-auto me-2"><a href="{% url "tours:tour-delete" pk=tour.id %}" style="color: whitesmoke">Delete</a></button>
+
+              {% endif %}            </div>
           </div>
         </div>
 
-        <!-- Карточка с отзывами -->
+        <!-- Форма для создания комментария -->
+        {% if user.is_authenticated %}
         <div class="col-lg-8 mb-4">
           <div class="card border shadow-sm">
-            <div class="p-4">
-              <h2 class="text-primary mb-3">Impressions</h2>
-{#              {% if impressions %}#}
-{#                {% for impression in impressions %}#}
-{#                  <div class="border-bottom mb-3 pb-3">#}
-{#                    <p><strong>{{ impression.user_name }}:</strong></p>#}
-{#                    <p>{{ impression.text }}</p>#}
-{#                    <p class="text-muted">{{ impression.date|date:"F j, Y, g:i a" }}</p>#}
-{#                  </div>#}
-{#                {% endfor %}#}
-{#              {% else %}#}
-{#                <p>No impressions yet for this location. Be the first to leave one!</p>#}
-{#              {% endif %}#}
-            </div>
-          </div>
-        </div>
-
-        <!-- Карточка для добавления отзыва -->
-        <div class="col-lg-8 mb-4">
-          <div class="card border shadow-sm">
-            <div class="p-4">
+            <div class="p-3">
               <h2 class="text-primary mb-3">Leave Your Impression</h2>
-{#              <form method="post" action="{% url 'add_route_impression' tour.id %}">#}
-{#                {% csrf_token %}#}
-{#                <div class="form-group">#}
-{#                  <label for="impressionText">Your impression:</label>#}
-{#                  <textarea id="impressionText" name="text" class="form-control" rows="4" required></textarea>#}
-{#                </div>#}
-{#                <button type="submit" class="btn btn-primary mt-3">Submit</button>#}
-{#              </form>#}
+              <div class="form-outline mb-4" id="comments">
+                <form method="post" action="{% url 'tours:comment' tour.id %}">
+                  {% csrf_token %}
+                  <label for="id_body">Add your comment:</label>
+                  <textarea name="body" cols="40" rows="4" placeholder="Share your thoughts in the comments..." 
+                            class="form-control mt-2 border border-primary rounded p-2" 
+                            required="" id="id_body"></textarea>
+                  <button type="submit" class="btn btn-info mt-2">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+
+        <!-- Блок с уже существующими комментариями -->
+        <div class="col-lg-8 mb-4">
+          <div class="card border shadow-sm">
+            <div class="p-3">
+              <h2 class="text-primary mb-3">Impressions</h2>
+              {% if tour.tour_comments.all %}
+                {% for comment in tour.tour_comments.all %}
+                  <div class="card mb-4">
+                    <div class="card-body">
+                      <p class="small text-muted mb-2">{{ comment.created|timesince }} ago</p>
+                      <p>{{ comment.body }}</p>
+                      <div class="d-flex justify-content-between">
+                        <div class="d-flex flex-row align-items-center">
+                          <i class="fas fa-user mx-1"></i>
+                          <p class="small mb-0 ms-2">@{{ comment.author.username }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                {% endfor %}
+              {% else %}
+                <p>No impressions yet for this tour. Be the first to leave one!</p>
+              {% endif %}
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- -------- END Location Detail Section with full-width text and improved formatting -------- -->
+  <!-- -------- END Location Detail Section with borders and images -------- -->
 {% endblock %}
 
 {% include "includes/footer.html" %}

@@ -1,1 +1,8 @@
-<h1>you logged out</h1>
+{% extends "index.html" %}
+{% include "includes/header.html" %}
+
+{% block content %}
+<p>Logged out!</p>
+
+<a href="{% url 'login'%}">Click here to login again.</a>
+{% endblock %}

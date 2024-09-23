@@ -1,66 +1,124 @@
-{#{% extends "base.html" %}#}
+{#{% extends "index.html" %}#}
 {#{% include "includes/header.html" %}#}
 {#{% block content %}#}
-{#  <main class="container my-5">#}
-{#    <div class="text-center">#}
-{#      <h1 class="display-4">{{ location.name }}</h1> <!-- Заголовок с именем локации -->#}
-{#      <p class="lead">Detailed information about the selected location.</p>#}
-{#    </div>#}
-{#    #}
-{#    <div class="row justify-content-center"> <!-- Центрируем контент -->#}
-{#      <div class="col-md-8 d-flex flex-column align-items-center"> <!-- Делаем блок на всю ширину с центровкой -->#}
+{#  <!-- -------- START Location Detail Section with borders and images -------- -->#}
+{#  <section class="py-9">#}
+{#    <div class="container">#}
+{#      <div class="text-center mb-5">#}
+{#        <h1 class="display-4">{{ location.name }}</h1> <!-- Заголовок с именем локации -->#}
+{#        <p class="lead">Detailed information about the selected location.</p>#}
+{#      </div>#}
 {##}
-{#        <div class="border rounded shadow-sm p-4 mb-4 w-100"> <!-- Карточка с основными данными -->#}
-{#          <h2 class="text-primary mb-3">Location Details</h2>#}
-{#          <p><strong>Country:</strong> {{ location.country }}</p>#}
-{#          <p><strong>City:</strong> {{ location.city }}</p>#}
-{#          <p><strong>Location:</strong> {{ location.location }}</p>#}
-{#          <p><strong>Description:</strong> {{ location.description }}</p>#}
-{#          {% if location.opening_time and location.closing_time %}#}
-{#            <p><strong>Working hours:</strong> {{ location.opening_time }} - {{ location.closing_time }}</p>#}
-{#          {% endif %}#}
-{#          {% if location.price != 0 %}#}
-{#            <p><strong>Cost of visit:</strong> {{ location.price }}€</p>#}
-{#          {% endif %}#}
-{#          {% if location.image %}#}
-{#            <img src="{{ location.image.url }}" width="400" class="img-fluid">#}
-{#          {% endif %}#}
-{#        </div>#}
-{##}
-{#        <div class="border rounded shadow-sm p-4 mb-4 w-100"> <!-- Карточка с отзывами -->#}
-{#          <h2 class="text-primary mb-3">Impressions</h2>#}
-{#          {% if impressions %}#}
-{#            {% for impression in impressions %}#}
-{#              <div class="border-bottom mb-3 pb-3">#}
-{#                <p><strong>{{ impression.user_name }}:</strong></p>#}
-{#                <p>{{ impression.text }}</p>#}
-{#                <p class="text-muted">{{ impression.date|date:"F j, Y, g:i a" }}</p>#}
+{#      <div class="row justify-content-center">#}
+{#        <div class="col-lg-8 mb-4">#}
+{#          <div class="card border shadow-sm">#}
+{#            <div class="row g-0">#}
+{#              <div class="col-md-4">#}
+{#                {% if location.image %}#}
+{#                  <img src="{{ location.image.url }}" alt="{{ location.name }}" class="img-fluid h-100 w-100 rounded-start" style="object-fit: cover;">#}
+{#                {% else %}#}
+{#                  <div class="d-flex justify-content-center align-items-center bg-secondary" style="height: 100%; width: 100%;">#}
+{#                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">#}
+{#                      <title>Placeholder</title>#}
+{#                      <rect width="100%" height="100%" fill="#55595c"></rect>#}
+{#                      <text x="50%" y="50%" fill="#eceeef" dy=".3em">No picture</text>#}
+{#                    </svg>#}
+{#                  </div>#}
+{#                {% endif %}#}
 {#              </div>#}
-{#            {% endfor %}#}
-{#          {% else %}#}
-{#            <p>No impressions yet for this location. Be the first to leave one!</p>#}
-{#          {% endif %}#}
-{#        </div>#}
 {##}
-{#        <div class="border rounded shadow-sm p-4 w-100"> <!-- Карточка для добавления отзыва -->#}
-{#          <h2 class="text-primary mb-3">Leave Your Impression</h2>#}
-{#          <form method="post" action="{% url 'add_impression' location.id %}">#}
-{#            {% csrf_token %}#}
-{#            <div class="form-group">#}
-{#              <label for="impressionText">Your impression:</label>#}
-{#              <textarea id="impressionText" name="text" class="form-control" rows="4" required></textarea>#}
+{#              <div class="col-md-8">#}
+{#                <div class="p-3">#}
+{#                  <h2 class="text-primary mb-3">Location Details</h2>#}
+{#                  <p><strong>Country:</strong> {{ location.country }}</p>#}
+{#                  <p><strong>City:</strong> {{ location.city }}</p>#}
+{#                  <p><strong>Location:</strong> {{ location.location }}</p>#}
+{#                  <p><strong>Description:</strong> {{ location.description }}</p>#}
+{#                  {% if location.opening_time and location.closing_time %}#}
+{#                    <p><strong>Working hours:</strong> {{ location.opening_time }} - {{ location.closing_time }}</p>#}
+{#                  {% endif %}#}
+{#                  {% if location.price != 0 %}#}
+{#                    <p><strong>Cost of visit:</strong> {{ location.price }}€</p>#}
+{#                  {% endif %}#}
+{#                {% if user.is_authenticated %}#}
+{#                  <button type="button"  class="btn bg-gradient-primary w-auto me-2"><a href="{% url "tours:locations-update" pk=location.id %}">Update</a></button>#}
+{#                  <button type="button" class="btn bg-gradient-secondary w-auto me-2"><a href="{% url "tours:locations-delete" pk=location.id %}" style="color: whitesmoke">Delete</a></button>#}
+{##}
+{#                {% endif %}#}
+{#                </div>#}
+{#              </div>#}
 {#            </div>#}
-{#            <button type="submit" class="btn btn-primary mt-3">Submit</button>#}
-{#          </form>#}
+{#          </div>#}
 {#        </div>#}
 {##}
+{#        <div class="col-lg-8 mb-4">#}
+{#          <div class="card border shadow-sm">#}
+{#            <div class="p-3">#}
+{#              <h2 class="text-primary mb-3">Leave Your Impression</h2>#}
+{#              {% include "includes/comments.html" %}#}
+{#              {% if user.is_authenticated %}#}
+{#                <div class="row d-flex justify-content-center">#}
+{#                  <div class="col-md-8 col-lg-6">#}
+{#                    <h1>Comments</h1>#}
+{#                    <div class="card shadow-0 border" style="background-color: #f0f2f5;">#}
+{#                      <div class="card-body p-4">#}
+{#                        <div class="form-outline mb-4" id="comments">#}
+{#                          <form method="post" action="{% url "tours:add-comment" location.id %}">#}
+              {#            <form method="post" action="{% url "movies:add-comment" movie.slug %}">#}
+{#                            {% csrf_token %}#}
+{#                            <label for="id_body">Add you comment:</label>#}
+{#                            <textarea name="body" cols="40" rows="4" placeholder="Share your thoughts in the comments..."#}
+{#                                      class="form-control mt-2" required="" id="id_body"></textarea>#}
+{#                            <button type="submit" class="btn btn-info mt-2"><a href="{% url "tours:locations-detail" pk=location.id %}">Add</a></button>#}
+{#                          </form>#}
+{#                        </div>#}
+{#                          </div>#}
+{#                        </div>#}
+{#                      </div>#}
+{##}
+{#        <div class="col-lg-8 mb-4">#}
+{#          <div class="card border shadow-sm">#}
+{#            <div class="p-3">#}
+{#              <h2 class="text-primary mb-3">Impressions</h2>#}
+{#               {% for comment in location.comments.all %}#}
+{#                <div class="card mb-4" id="commentLike470">#}
+{#                  <div class="card-body">#}
+{#                    <p class="small text-muted mb-2">{{ comment.created|timesince }} ago</p>#}
+{##}
+{#                <div class="d-flex flex-row align-items-center">#}
+{##}
+{#                  <p>{{ comment.body }}</p>#}
+{##}
+{#                </div>#}
+{##}
+{#                <div class="d-flex justify-content-between">#}
+{#                  <div class="d-flex flex-row align-items-center">#}
+{#                    <i class="fas fa-user mx-1"></i>#}
+{#                    <p class="small mb-0 ms-2">@{{ comment.author.username }}</p>#}
+{#                  </div>#}
+{##}
+{#                  <div class="d-flex justify-content-end">#}
+{#                    </div>#}
+{#                </div>#}
+{#              </div>#}
+{#            </div>#}
+{#            <hr>#}
+{#          {% endfor %}#}
+{#        </div>#}
 {#      </div>#}
 {#    </div>#}
-{#  </main>#}
+{#  </div>#}
+{#{% endif %}#}
+{#            </div>#}
+{#          </div>#}
+{#        </div>#}
+{#      </div>#}
+{#    </div>#}
+{#  </section>#}
+{#  <!-- -------- END Location Detail Section with borders and images -------- -->#}
 {#{% endblock %}#}
 {##}
 {#{% include "includes/footer.html" %}#}
-
 
 {% extends "index.html" %}
 {% include "includes/header.html" %}
@@ -68,12 +126,14 @@
   <!-- -------- START Location Detail Section with borders and images -------- -->
   <section class="py-9">
     <div class="container">
+      <!-- Заголовок с именем локации -->
       <div class="text-center mb-5">
-        <h1 class="display-4">{{ location.name }}</h1> <!-- Заголовок с именем локации -->
+        <h1 class="display-4">{{ location.name }}</h1>
         <p class="lead">Detailed information about the selected location.</p>
       </div>
 
       <div class="row justify-content-center">
+        <!-- Карточка с подробностями локации -->
         <div class="col-lg-8 mb-4">
           <div class="card border shadow-sm">
             <div class="row g-0">
@@ -104,43 +164,65 @@
                   {% if location.price != 0 %}
                     <p><strong>Cost of visit:</strong> {{ location.price }}€</p>
                   {% endif %}
+                  {% if user.is_authenticated %}
+                    <button type="button" class="btn bg-gradient-primary w-auto me-2">
+                      <a href="{% url 'tours:locations-update' pk=location.id %}">Update</a>
+                    </button>
+                    <button type="button" class="btn bg-gradient-secondary w-auto me-2">
+                      <a href="{% url 'tours:locations-delete' pk=location.id %}" style="color: whitesmoke">Delete</a>
+                    </button>
+                  {% endif %}
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="col-lg-8 mb-4">
-          <div class="card border shadow-sm">
-            <div class="p-3">
-              <h2 class="text-primary mb-3">Impressions</h2>
-              {# {% if impressions %} #}
-              {#   {% for impression in impressions %} #}
-              {#     <div class="border-bottom mb-3 pb-3"> #}
-              {#       <p><strong>{{ impression.user_name }}:</strong></p> #}
-              {#       <p>{{ impression.text }}</p> #}
-              {#       <p class="text-muted">{{ impression.date|date:"F j, Y, g:i a" }}</p> #}
-              {#     </div> #}
-              {#   {% endfor %} #}
-              {# {% else %} #}
-              <p>No impressions yet for this location. Be the first to leave one!</p>
-              {# {% endif %} #}
-            </div>
-          </div>
-        </div>
-
+        <!-- Форма для создания комментария -->
+        {% if user.is_authenticated %}
         <div class="col-lg-8 mb-4">
           <div class="card border shadow-sm">
             <div class="p-3">
               <h2 class="text-primary mb-3">Leave Your Impression</h2>
-              {# <form method="post" action="{% url 'add_impression' location.id %}"> #}
-              {#   {% csrf_token %} #}
-              {#   <div class="form-group"> #}
-              {#     <label for="impressionText">Your impression:</label> #}
-              {#     <textarea id="impressionText" name="text" class="form-control" rows="4" required></textarea> #}
-              {#   </div> #}
-              {#   <button type="submit" class="btn btn-primary mt-3">Submit</button> #}
-              {# </form> #}
+              <div class="form-outline mb-4" id="comments">
+                <form method="post" action="{% url 'tours:add-comment' location.id %}">
+                  {% csrf_token %}
+                  <label for="id_body">Add your comment:</label>
+                  <textarea name="body" cols="40" rows="4" placeholder="Share your thoughts in the comments..." 
+                            class="form-control mt-2 border border-primary rounded p-2" 
+                            required="" id="id_body"></textarea>
+                  <button type="submit" class="btn btn-info mt-2">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+
+        <!-- Блок с уже существующими комментариями -->
+        <div class="col-lg-8 mb-4">
+          <div class="card border shadow-sm">
+            <div class="p-3">
+              <h2 class="text-primary mb-3">Impressions</h2>
+              {% if location.comments.all %}
+                {% for comment in location.comments.all %}
+                  <div class="card mb-4">
+                    <div class="card-body">
+                      <p class="small text-muted mb-2">{{ comment.created|timesince }} ago</p>
+                      <p>{{ comment.body }}</p>
+                      <div class="d-flex justify-content-between">
+                        <div class="d-flex flex-row align-items-center">
+                          <i class="fas fa-user mx-1"></i>
+                          <p class="small mb-0 ms-2">@{{ comment.author.username }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                {% endfor %}
+              {% else %}
+                <p>No impressions yet for this location. Be the first to leave one!</p>
+              {% endif %}
             </div>
           </div>
         </div>
@@ -151,3 +233,4 @@
 {% endblock %}
 
 {% include "includes/footer.html" %}
+
