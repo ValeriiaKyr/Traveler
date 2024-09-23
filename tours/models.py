@@ -2,6 +2,9 @@ from django.contrib.auth.models import AbstractUser, Group
 from django.db import models
 from django.conf import settings
 from django.urls import reverse
+import cloudinary
+import cloudinary.uploader
+import cloudinary.models
 
 
 class Location(models.Model):
@@ -13,7 +16,8 @@ class Location(models.Model):
     opening_time = models.TimeField(blank=True, null=True)
     closing_time = models.TimeField(blank=True, null=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    image = models.ImageField(upload_to='static/images/', blank=True, null=True)
+    # image = models.ImageField(upload_to='static/images/', blank=True, null=True)
+    image = cloudinary.models.CloudinaryField('image', null=True, blank=True)
 
     class Meta:
         ordering = ['name']
