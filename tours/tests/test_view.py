@@ -1,41 +1,39 @@
 from django.contrib.auth import get_user_model
+from django.test import TestCase
 from django.urls import reverse
-from django.test import TestCase, Client
-
 
 from tours.models import Tour, Location
 
 LOCATION_URL = reverse('tours:locations-list')
 TOUR_URL = reverse('tours:tour-list')
 
+
 class TourTests(TestCase):
-    def setUp(self):
+    def setUp(self) -> None:
         self.user = get_user_model().objects.create_user(
             username="test",
             password="test123",
         )
         self.client.force_login(self.user)
 
-    def test_retrieve_tour(self):
+    def test_retrieve_tour(self) -> None:
         location = Location.objects.create(
-            name="test",
-            country="test",
-            city="test",
-            location="test",
-            price="10.00"
+            name='test',
+            country='test',
+            city='test',
+            location='test',
+            price='10.00'
         )
 
         tour1 = Tour.objects.create(
             name="test1",
             duration="2:00",
             place="test1",
-            # location=location,
         )
         tour2 = Tour.objects.create(
             name="test2",
             duration="2:00",
             place="test2",
-            # location=location,
         )
         tour1.location.add(location)
         tour2.location.add(location)
@@ -46,7 +44,7 @@ class TourTests(TestCase):
             list(response.context["tour_list"]),
             list(tour_queryset)
         )
-        self.assertTemplateUsed(response, 'tours/tour_list.html')
+        self.assertTemplateUsed(response, "tours/tour_list.html")
 
 
 class LocationsTests(TestCase):
@@ -81,5 +79,4 @@ class LocationsTests(TestCase):
             list(response.context["location_list"]),
             list(location_queryset)
         )
-        self.assertTemplateUsed(response, 'tours/location_list.html')
-
+        self.assertTemplateUsed(response, "tours/location_list.html")

@@ -3,7 +3,6 @@
 {% load crispy_forms_filters %}
 {% load location_tour_filter %}
 {% block content %}
-  <!-- -------- START Locations Section with full-width cards and names -------- -->
   <section class="py-9">
     <div class="container">
       <div class="text-center mb-5">
@@ -44,8 +43,6 @@
                   <div class="col p-4">
                     <strong class="d-block text-primary">Country: {{ tour.place }}</strong>
                     <strong class="d-block text-primary">Location: {{ tour|join_locations }}</strong>
-{#                    <strong class="d-block text-primary">Location: {{ location.location }}</strong>#}
-{#                    <h3 class="mb-3">{{ location.name }}</h3>#}
                     <p class="text-secondary mb-3">
                       <i>{{ tour.description|truncatewords:25 }}</i>
                     </p>
@@ -67,5 +64,4 @@
       {% include "includes/pagination.html" %}
     </div>
   </section>
-  <!-- -------- END Locations Section with full-width cards and names -------- -->
 {% endblock %}

@@ -2,16 +2,14 @@
 {% include "includes/header.html" %}
 {% load location_tour_filter %}
 {% block content %}
-  <!-- -------- START Location Detail Section with full-width text and improved formatting -------- -->
   <section class="py-9">
     <div class="container">
       <div class="text-center mb-5">
-        <h1 class="display-4">{{ tour.name }}</h1> <!-- Заголовок с именем локации -->
+        <h1 class="display-4">{{ tour.name }}</h1>
         <p class="lead">Detailed information about the selected tour.</p>
       </div>
 
       <div class="row justify-content-center">
-        <!-- Карточка с основными данными -->
         <div class="col-lg-8 mb-4">
           <div class="card border shadow-sm">
             <div class="p-4">
@@ -21,7 +19,7 @@
               <p><strong>Duration:</strong> {{  tour.duration }} hours</p>
               <p><strong>Locations you will visit on this tour:</strong> {{ tour|join_locations }}</p>
               <p><strong>Description:</strong></p>
-              <p class="text-secondary">{{ tour.description }}</p> <!-- Добавлен класс для цвета текста -->
+              <p class="text-secondary">{{ tour.description }}</p>
               {% if user.is_authenticated %}
                   <button type="button"  class="btn bg-gradient-primary w-auto me-2"><a href="{% url "tours:tour-update" pk=tour.id %}" style="color: whitesmoke">Update</a></button>
                 <button type="button" class="btn bg-gradient-secondary w-auto me-2"><a href="{% url "tours:tour-delete" pk=tour.id %}" style="color: whitesmoke">Delete</a></button>
@@ -30,7 +28,6 @@
           </div>
         </div>
 
-        <!-- Форма для создания комментария -->
         {% if user.is_authenticated %}
         <div class="col-lg-8 mb-4">
           <div class="card border shadow-sm">
@@ -51,7 +48,6 @@
         </div>
         {% endif %}
 
-        <!-- Блок с уже существующими комментариями -->
         <div class="col-lg-8 mb-4">
           <div class="card border shadow-sm">
             <div class="p-3">
@@ -81,7 +77,6 @@
       </div>
     </div>
   </section>
-  <!-- -------- END Location Detail Section with borders and images -------- -->
 {% endblock %}
 
 {% include "includes/footer.html" %}

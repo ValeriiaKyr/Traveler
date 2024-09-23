@@ -1,6 +1,6 @@
-from decimal import Decimal
 from unittest import TestCase
-from tours.forms import TourSearchForm, LocationSearchForm, RegistrationForm, LocationCreateForm
+
+from tours.forms import TourSearchForm, LocationSearchForm, RegistrationForm
 
 
 class FormTests(TestCase):
@@ -18,8 +18,8 @@ class FormTests(TestCase):
 
     def test_register_form(self):
         form_data = {
-            'username': 'test',
-            'email': "test@test.com",
+            "username": "test",
+            "email": "test@test.com",
             "first_name": "test first",
             "last_name": "test last",
             "password1": "user12test",

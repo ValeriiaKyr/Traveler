@@ -1,7 +1,5 @@
-from datetime import datetime
-
-from django.test import TestCase
 from django.contrib.auth import get_user_model
+from django.test import TestCase
 
 from tours.models import Tour, Location, CommentLocation, CommentTour
 

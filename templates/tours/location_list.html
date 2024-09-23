@@ -1,18 +1,12 @@
 {% extends "index.html" %}
 {% include "includes/header.html" %}
 {% load crispy_forms_filters %}
-
 {% block content %}
-  <!-- -------- START Locations Section with borders and images -------- -->
 <section class="py-9">
   <div class="container">
     <div class="text-center mb-5">
       <h1 class="display-4">Locations</h1>
-{#    <form class="form-inline">#}
-{#    {{ location_search_form|crispy }}#}
-{#    <input class="btn btn-secondary" type="submit" value="🔎">#}
-{#    </form>#}
-    <!-- Search form with updated styles -->
+
      <form class="form-inline p-2 mb-4" style="border: 1px solid #ddd; border-radius: 5px; background-color: #f5f5f5;">
         <div class="row justify-content-center align-items-center">
           <div class="col-md-10 mb-2 mb-md-0">
@@ -25,8 +19,6 @@
           </div>
         </div>
       </form>
-    
-    
       <p class="lead">Here you can see all the locations that interest you. Do not forget to leave an impression of the chosen location so that in the future people can also pay attention to it.</p>
       {% if user.is_authenticated %}
           <button type="button"  class="btn bg-gradient-primary w-auto me-2"><a href="{% url "tours:locations-create" %}">Create New</a></button>
@@ -53,8 +45,8 @@
                     </div>
                   {% endif %}
                 </div>
-                <div class="col-md-8"> <!-- Column for content -->
-                  <div class="p-3 d-flex flex-column justify-content-between h-100"> <!-- Content section with padding -->
+                <div class="col-md-8"> 
+                  <div class="p-3 d-flex flex-column justify-content-between h-100"> 
                     <div>
                       <strong class="d-block text-primary">Country: {{ location.country }}</strong>
                       <strong class="d-block text-primary">City: {{ location.city }}</strong>
