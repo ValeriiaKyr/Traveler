@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-
+from os import getenv
 from pathlib import Path
 
 import os
@@ -29,8 +29,8 @@ load_dotenv(BASE_DIR / ".env")  # take environment variables from .env.
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ag0w+#8ka&la+seud%qt8v^$b1(rpgj+$bm-g62(f!=2zvc*!o'
-
+# SECRET_KEY = 'django-insecure-ag0w+#8ka&la+seud%qt8v^$b1(rpgj+$bm-g62(f!=2zvc*!o'
+SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
