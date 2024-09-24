@@ -1,5 +1,434 @@
 [
   {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2024-09-17T11:09:41.698Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "2",
+      "object_repr": "admin",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2024-09-17T11:10:40.333Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "3",
+      "object_repr": "new_user",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2024-09-17T11:18:13.849Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "1",
+      "object_repr": "Temple Expiatori de la Sagrada Família in Spain, Barcelona",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2024-09-17T11:23:55.729Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "2",
+      "object_repr": "La Pedrera in Spain, Barcelona",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2024-09-17T11:26:43.237Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "3",
+      "object_repr": "Casa Batlló in Spain, Barcelona",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2024-09-17T11:29:59.080Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "4",
+      "object_repr": "Casa Vicens in Spain, Barcelona",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+      "action_time": "2024-09-17T11:32:13.744Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "5",
+      "object_repr": "Gran Teatre del Liceu in Spain, Barcelona",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+      "action_time": "2024-09-17T11:33:32.374Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "6",
+      "object_repr": "Hospital de Sant Pau in Spain, Barselona",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+      "action_time": "2024-09-17T11:35:35.804Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "1",
+      "object_repr": "Route for Contemporary and Modern Art",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+      "action_time": "2024-09-17T11:38:09.596Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "7",
+      "object_repr": "Brandenburg Gate in Germany, Berlin",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+      "action_time": "2024-09-17T11:40:46.184Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "8",
+      "object_repr": "Reichstag Building in Germany, Berlin",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+      "action_time": "2024-09-17T11:42:14.588Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "9",
+      "object_repr": "Holocaust Memorial in Germany, Berlin",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+      "action_time": "2024-09-17T11:43:13.792Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "10",
+      "object_repr": "Potsdamer Platz in Germany, Berlin",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+      "action_time": "2024-09-17T11:44:10.792Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "11",
+      "object_repr": "Alexanderplatz in Germany, Berlin",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+      "action_time": "2024-09-17T11:47:03.129Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "2",
+      "object_repr": "Historical Center of Berlin",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+      "action_time": "2024-09-17T11:48:52.836Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "12",
+      "object_repr": "Old Town (Stare Miasto) in Poland, Warsaw",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+      "action_time": "2024-09-17T11:50:18.349Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "13",
+      "object_repr": "Royal Castle (Zamek Królewski) in Poland, Warsaw",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+      "action_time": "2024-09-17T11:51:20.529Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "14",
+      "object_repr": "Market Square (Rynek) in Poland, Warsaw",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+      "action_time": "2024-09-17T11:52:41.037Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "15",
+      "object_repr": "St. John's Cathedral (Katedra św. Jana) in Poland, Warsaw",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+      "action_time": "2024-09-17T11:53:44.386Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "16",
+      "object_repr": "Barbican (Barbakan) in Poland, Warsaw",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+      "action_time": "2024-09-17T11:54:50.039Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "17",
+      "object_repr": "Łazienki Park (Łazienki Królewskie) in Poland, Warsaw",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+      "action_time": "2024-09-17T11:55:59.831Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "18",
+      "object_repr": "Piłsudski Park (Park Piłsudskiego in Poland, Warsaw",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+      "action_time": "2024-09-17T11:57:20.487Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "3",
+      "object_repr": "Historical Center of Warsaw Tour",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+      "action_time": "2024-09-18T14:18:46.723Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "16",
+      "object_repr": "Barbican (Barbakan) in Poland, Warsaw",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+      "action_time": "2024-09-18T14:27:41.907Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "11",
+      "object_repr": "Alexanderplatz in Germany, Berlin",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+      "action_time": "2024-09-18T14:27:50.467Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "7",
+      "object_repr": "Brandenburg Gate in Germany, Berlin",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+      "action_time": "2024-09-18T14:28:00.702Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "3",
+      "object_repr": "Casa Batlló in Spain, Barcelona",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 28,
+    "fields": {
+      "action_time": "2024-09-18T14:28:23.619Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "4",
+      "object_repr": "Casa Vicens in Spain, Barcelona",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 29,
+    "fields": {
+      "action_time": "2024-09-18T14:29:17.800Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "5",
+      "object_repr": "Gran Teatre del Liceu in Spain, Barcelona",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 30,
+    "fields": {
+      "action_time": "2024-09-18T14:29:44.420Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "4",
+      "object_repr": "Casa Vicens in Spain, Barcelona",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 31,
+    "fields": {
+      "action_time": "2024-09-18T15:49:17.852Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "2",
+      "object_repr": "Historical Center of Berlin - Germany, Berlin",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Place\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 32,
+    "fields": {
+      "action_time": "2024-09-18T15:49:36.952Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "3",
+      "object_repr": "Historical Center of Warsaw Tour - Poland, Warsaw",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Place\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 33,
+    "fields": {
+      "action_time": "2024-09-18T15:49:53.569Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "1",
+      "object_repr": "Route for Contemporary and Modern Art - Spain, Barselona",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Place\"]}}]"
+    }
+  },
+  {
     "model": "auth.permission",
     "pk": 1,
     "fields": {
@@ -288,78 +717,6 @@
     }
   },
   {
-    "model": "auth.permission",
-    "pk": 33,
-    "fields": {
-      "name": "Can add comment location",
-      "content_type": 9,
-      "codename": "add_commentlocation"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 34,
-    "fields": {
-      "name": "Can change comment location",
-      "content_type": 9,
-      "codename": "change_commentlocation"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 35,
-    "fields": {
-      "name": "Can delete comment location",
-      "content_type": 9,
-      "codename": "delete_commentlocation"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 36,
-    "fields": {
-      "name": "Can view comment location",
-      "content_type": 9,
-      "codename": "view_commentlocation"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 37,
-    "fields": {
-      "name": "Can add comment tour",
-      "content_type": 10,
-      "codename": "add_commenttour"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 38,
-    "fields": {
-      "name": "Can change comment tour",
-      "content_type": 10,
-      "codename": "change_commenttour"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 39,
-    "fields": {
-      "name": "Can delete comment tour",
-      "content_type": 10,
-      "codename": "delete_commenttour"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 40,
-    "fields": {
-      "name": "Can view comment tour",
-      "content_type": 10,
-      "codename": "view_commenttour"
-    }
-  },
-  {
     "model": "contenttypes.contenttype",
     "pk": 1,
     "fields": {
@@ -424,19 +781,440 @@
     }
   },
   {
-    "model": "contenttypes.contenttype",
-    "pk": 9,
+    "model": "sessions.session",
+    "pk": "2hv9tq6vyksunk26xz12g4ascisjql7x",
     "fields": {
-      "app_label": "tours",
-      "model": "commentlocation"
+      "session_data": ".eJxVjEsOwjAMBe-SNYrimMSGJXvOEMWNSwsokfpZIe4OlbqA7ZuZ9zIpr8uQ1lmnNBZzNmAOv5vk7qF1A-We663ZrtVlGsVuit3pbK-t6POyu38HQ56Hb03e9158dIKkzD5wyeT6U2DpAyAeQQJFicyEsQR0wIDakUJRJCfm_QG1zja6:1srd7q:cOXJ5_PYKv4XIluXFateZgxuOuKjOafLvN_j6iQK-Y8",
+      "expire_date": "2024-10-04T12:52:42.755Z"
     }
   },
   {
-    "model": "contenttypes.contenttype",
+    "model": "sessions.session",
+    "pk": "9d1db787fl3m8vqua5k7mihcrijkzloc",
+    "fields": {
+      "session_data": ".eJxVjEsOwjAMBe-SNYrimMSGJXvOEMWNSwsokfpZIe4OlbqA7ZuZ9zIpr8uQ1lmnNBZzNmAOv5vk7qF1A-We663ZrtVlGsVuit3pbK-t6POyu38HQ56Hb03e9158dIKkzD5wyeT6U2DpAyAeQQJFicyEsQR0wIDakUJRJCfm_QG1zja6:1srd2L:c_K6xF-nEuTl9P50jhTai-SkNW0mqxEJ_PtUov3DVL8",
+      "expire_date": "2024-10-04T12:47:01.192Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "c0t3sgq8fvjwiuwngysunljy1my5mld6",
+    "fields": {
+      "session_data": ".eJxVjEsOwjAMBe-SNYrimMSGJXvOEMWNSwsokfpZIe4OlbqA7ZuZ9zIpr8uQ1lmnNBZzNmAOv5vk7qF1A-We663ZrtVlGsVuit3pbK-t6POyu38HQ56Hb03e9158dIKkzD5wyeT6U2DpAyAeQQJFicyEsQR0wIDakUJRJCfm_QG1zja6:1sqW4O:m9drds2wSJRPNZ-cXO9KnuvDYsC9U59zxyicqCbx3qI",
+      "expire_date": "2024-10-01T11:08:32.903Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "dpbj7gy5pmco3nuyqdmo9z2jmt8hqhl8",
+    "fields": {
+      "session_data": ".eJxVjEsOwjAMBe-SNYrimMSGJXvOEMWNSwsokfpZIe4OlbqA7ZuZ9zIpr8uQ1lmnNBZzNmAOv5vk7qF1A-We663ZrtVlGsVuit3pbK-t6POyu38HQ56Hb03e9158dIKkzD5wyeT6U2DpAyAeQQJFicyEsQR0wIDakUJRJCfm_QG1zja6:1srJA4:QscU1bFoNA8bppkbpJ1cxjstdU4drM0UwRON1-Y1njM",
+      "expire_date": "2024-10-03T15:33:40.907Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "nz9jietvmc6uzvhqdb8v2irs42xs8aqi",
+    "fields": {
+      "session_data": ".eJxVjEsOwjAMBe-SNYrimMSGJXvOEMWNSwsokfpZIe4OlbqA7ZuZ9zIpr8uQ1lmnNBZzNmAOv5vk7qF1A-We663ZrtVlGsVuit3pbK-t6POyu38HQ56Hb03e9158dIKkzD5wyeT6U2DpAyAeQQJFicyEsQR0wIDakUJRJCfm_QG1zja6:1srczg:gZEYR928Pjlx3fhDLfFEK652xCIYGa8MwbrCUf1SjqU",
+      "expire_date": "2024-10-04T12:44:16.195Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "rpfiudgnbugvss3itle01rjdj0ddugxj",
+    "fields": {
+      "session_data": ".eJxVjEsOwjAMBe-SNYrimMSGJXvOEMWNSwsokfpZIe4OlbqA7ZuZ9zIpr8uQ1lmnNBZzNmAOv5vk7qF1A-We663ZrtVlGsVuit3pbK-t6POyu38HQ56Hb03e9158dIKkzD5wyeT6U2DpAyAeQQJFicyEsQR0wIDakUJRJCfm_QG1zja6:1srdEt:KH1DRRIcj6PUVcrqjHRQJSGr_YZOvXfVT6V1GlTdtQ8",
+      "expire_date": "2024-10-04T12:59:59.866Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "tbfndlw73x4ieqtfkxdcm73zb2nx63jz",
+    "fields": {
+      "session_data": ".eJxVjEsOwjAMBe-SNYrimMSGJXvOEMWNSwsokfpZIe4OlbqA7ZuZ9zIpr8uQ1lmnNBZzNmAOv5vk7qF1A-We663ZrtVlGsVuit3pbK-t6POyu38HQ56Hb03e9158dIKkzD5wyeT6U2DpAyAeQQJFicyEsQR0wIDakUJRJCfm_QG1zja6:1srdAY:2l4u78HAx_PigArk7zR0SR5c_O5q3Ac8zeOoV0vKRM0",
+      "expire_date": "2024-10-04T12:55:30.161Z"
+    }
+  },
+  {
+    "model": "tours.location",
+    "pk": 1,
+    "fields": {
+      "name": "Temple Expiatori de la Sagrada Família",
+      "country": "Spain",
+      "city": "Barcelona",
+      "description": "The Temple Expiatori de la Sagrada Família, commonly known as the Sagrada Família, is a monumental basilica in Barcelona, Spain, designed by the renowned architect Antoni Gaudí. Construction began in 1882 and remains ongoing. The church is famous for its unique architectural style that blends Gothic and Art Nouveau elements, characterized by its intricate facades, towering spires, and richly detailed interiors. It is a UNESCO World Heritage Site and one of Barcelona’s most iconic landmarks, drawing millions of visitors each year. The Sagrada Família is known for its ambitious design and is considered a masterpiece of modernist architecture.",
+      "location": "Carrer de Mallorca, 401, 08013 Barcelona, Spain",
+      "opening_time": "09:00:00",
+      "closing_time": "20:00:00",
+      "price": "26.00",
+      "image": ""
+    }
+  },
+  {
+    "model": "tours.location",
+    "pk": 2,
+    "fields": {
+      "name": "La Pedrera",
+      "country": "Spain",
+      "city": "Barcelona",
+      "description": "La Pedrera, or Casa Milà, is a renowned modernist building designed by Antoni Gaudí in Barcelona. Located at Passeig de Gràcia, 92, it features a unique undulating stone façade and wrought iron balconies. The building, completed in 1912, is celebrated for its innovative architecture and is a UNESCO World Heritage Site.",
+      "location": "Passeig de Gràcia, 92, 08008 Barcelona, Spain",
+      "opening_time": "09:00:00",
+      "closing_time": "20:30:00",
+      "price": "25.00",
+      "image": ""
+    }
+  },
+  {
+    "model": "tours.location",
+    "pk": 3,
+    "fields": {
+      "name": "Casa Batlló",
+      "country": "Spain",
+      "city": "Barcelona",
+      "description": "Casa Batlló is a stunning modernist building designed by Antoni Gaudí, located at Passeig de Gràcia, 43 in Barcelona. Completed in 1906, it is renowned for its vibrant, colorful façade, wavy shapes, and intricate details, reminiscent of a fantastical underwater world. This UNESCO World Heritage Site is celebrated for its imaginative and innovative architecture.",
+      "location": "Passeig de Gràcia, 43, Barcelona, Spain",
+      "opening_time": "09:00:00",
+      "closing_time": "21:00:00",
+      "price": "35.00",
+      "image": "https://res.cloudinary.com/dp0kcgmnd/image/upload/v1727100632/fcgzvfqzxxlbxxrd8hgd.avif"
+    }
+  },
+  {
+    "model": "tours.location",
+    "pk": 4,
+    "fields": {
+      "name": "Casa Vicens",
+      "country": "Spain",
+      "city": "Barcelona",
+      "description": "Casa Vicens is an early masterpiece by Antoni Gaudí, located at Carrer de les Carolines, 20-26, 08012 Barcelona. Completed in 1888, it is known for its eclectic design, combining Moorish, Oriental, and neoclassical elements, with a striking tiled façade and intricate interior details.",
+      "location": "Carrer de les Carolines, 20-26, 08012 Barcelona, Spain",
+      "opening_time": "10:00:00",
+      "closing_time": "20:00:00",
+      "price": "20.00",
+      "image": "https://res.cloudinary.com/dp0kcgmnd/image/upload/v1727104894/fsd2zu8wfs3eozla0aee.jpg"
+    }
+  },
+  {
+    "model": "tours.location",
+    "pk": 5,
+    "fields": {
+      "name": "Gran Teatre del Liceu",
+      "country": "Spain",
+      "city": "Barcelona",
+      "description": "Gran Teatre del Liceu is Barcelona's premier opera house, located at La Rambla, 51-59, 08002 Barcelona. Established in 1847, this grand venue is known for its elaborate neoclassical architecture, including a stunning façade and an opulent interior featuring intricate gilded details and a luxurious chandelier. The Liceu has a rich history of hosting world-class opera, ballet, and classical music performances, making it a cultural cornerstone of the city.",
+      "location": "La Rambla, 51-59, 08002 Barcelona, Spain",
+      "opening_time": null,
+      "closing_time": null,
+      "price": "50.00",
+      "image": "https://res.cloudinary.com/dp0kcgmnd/image/upload/v1727104907/lglukzcsukguvktc92xy.jpg"
+    }
+  },
+  {
+    "model": "tours.location",
+    "pk": 6,
+    "fields": {
+      "name": "Hospital de Sant Pau",
+      "country": "Spain",
+      "city": "Barselona",
+      "description": "Hospital de Sant Pau is a stunning example of modernist architecture located at Carrer de Sant Antoni Maria Claret, 167, 08025 Barcelona. Designed by Lluís Domènech i Montaner and completed in 1930, this former hospital complex is renowned for its intricate mosaics, colorful tiles, and ornate pavilions set within lush gardens. It is now a UNESCO World Heritage Site and serves as a cultural and architectural landmark.",
+      "location": "Carrer de Sant Antoni Maria Claret, 167, 08025 Barcelona, Spain",
+      "opening_time": "10:00:00",
+      "closing_time": "18:00:00",
+      "price": "15.00",
+      "image": "https://res.cloudinary.com/dp0kcgmnd/image/upload/v1727104946/wb9dbxso47a3lsnfm2lv.jpg"
+    }
+  },
+  {
+    "model": "tours.location",
+    "pk": 7,
+    "fields": {
+      "name": "Brandenburg Gate",
+      "country": "Germany",
+      "city": "Berlin",
+      "description": "Brandenburg Gate is an iconic landmark in Berlin, Germany. Located at Pariser Platz, 10117 Berlin, this neoclassical monument was built between 1788 and 1791 and is a symbol of Germany's reunification.\r\nVisitors can explore the gate at their leisure, and it is a popular spot for both tourists and locals. For additional historical context or guided tours, it is best to check with local tour operators or visitor information centers.",
+      "location": "Pariser Platz, 10117 Berlin",
+      "opening_time": null,
+      "closing_time": null,
+      "price": "0.00",
+      "image": "https://res.cloudinary.com/dp0kcgmnd/image/upload/v1727104844/mxfiuyd9gnhyl2b8uxr9.webp"
+    }
+  },
+  {
+    "model": "tours.location",
+    "pk": 8,
+    "fields": {
+      "name": "Reichstag Building",
+      "country": "Germany",
+      "city": "Berlin",
+      "description": "Reichstag Building is the historic seat of the German Parliament located at Platz der Republik 1, 11011 Berlin. Designed by Paul Wallot and completed in 1894, the building is known for its impressive glass dome designed by architect Norman Foster, offering panoramic views of Berlin.\r\nTo visit the dome and roof terrace, you need to book a time slot in advance through the Reichstag’s official website or visitor center.",
+      "location": "Platz der Republik 1, 11011 Berlin,",
+      "opening_time": "08:00:00",
+      "closing_time": "12:00:00",
+      "price": "0.00",
+      "image": "https://res.cloudinary.com/dp0kcgmnd/image/upload/v1727105417/freybvmhopnmdrcb4a0b.jpg"
+    }
+  },
+  {
+    "model": "tours.location",
+    "pk": 9,
+    "fields": {
+      "name": "Holocaust Memorial",
+      "country": "Germany",
+      "city": "Berlin",
+      "description": "Memorial to the Murdered Jews of Europe, also known as the Holocaust Memorial, is a significant monument located at Cora-Berliner-Straße, 10117 Berlin. Designed by architect Peter Eisenman and opened in 2005, the memorial consists of 2,711 concrete slabs of varying heights arranged in a grid pattern, creating a somber and reflective space dedicated to the Jewish victims of the Holocaust.",
+      "location": "Cora-Berliner-Straße, 10117 Berlin",
+      "opening_time": null,
+      "closing_time": null,
+      "price": "0.00",
+      "image": "https://res.cloudinary.com/dp0kcgmnd/image/upload/v1727105108/ruphhkhhfbyacbwqnues.avif"
+    }
+  },
+  {
+    "model": "tours.location",
     "pk": 10,
     "fields": {
-      "app_label": "tours",
-      "model": "commenttour"
+      "name": "Potsdamer Platz",
+      "country": "Germany",
+      "city": "Berlin",
+      "description": "Potsdamer Platz features numerous attractions including shopping centers, cinemas, restaurants, and the impressive Sony Center with its iconic roof. It's a lively area ideal for exploring Berlin's contemporary urban landscape. For specific attractions and events, it’s best to check individual venues for their operating hours and ticket prices.",
+      "location": "Potsdamer Platz, 10785 Berlin, Germany",
+      "opening_time": null,
+      "closing_time": null,
+      "price": "0.00",
+      "image": "https://res.cloudinary.com/dp0kcgmnd/image/upload/v1727105359/ao6ftvkrlcy6dez16xbp.jpg"
+    }
+  },
+  {
+    "model": "tours.location",
+    "pk": 11,
+    "fields": {
+      "name": "Alexanderplatz",
+      "country": "Germany",
+      "city": "Berlin",
+      "description": "The square features several notable attractions, including the Fernsehturm (TV Tower), which offers panoramic views of Berlin, the World Clock, and various shopping centers and restaurants. For visiting specific attractions like the TV Tower, you would need to check their individual opening hours and ticket prices.",
+      "location": "Alexanderplatz, 10178 Berlin, Germany",
+      "opening_time": null,
+      "closing_time": null,
+      "price": "0.00",
+      "image": "https://res.cloudinary.com/dp0kcgmnd/image/upload/v1727104743/ep9zgss97ms3angif0an.webp"
+    }
+  },
+  {
+    "model": "tours.location",
+    "pk": 12,
+    "fields": {
+      "name": "Old Town (Stare Miasto)",
+      "country": "Poland",
+      "city": "Warsaw",
+      "description": "Old Town (Stare Miasto) in Warsaw, Poland, is the historic heart of the city and a UNESCO World Heritage Site. This charming district features beautifully restored buildings, cobblestone streets, and picturesque squares, reflecting Warsaw's rich history and vibrant cultural life.",
+      "location": "Stare Miasto, Warsaw, Poland",
+      "opening_time": null,
+      "closing_time": null,
+      "price": "0.00",
+      "image": "https://res.cloudinary.com/dp0kcgmnd/image/upload/v1727105219/shb5sbp77atlgijpkqgc.jpg"
+    }
+  },
+  {
+    "model": "tours.location",
+    "pk": 13,
+    "fields": {
+      "name": "Royal Castle (Zamek Królewski)",
+      "country": "Poland",
+      "city": "Warsaw",
+      "description": "Royal Castle (Zamek Królewski) is a historic palace located at Plac Zamkowy 4, 00-277 Warsaw, Poland. Originally the residence of Polish monarchs, it was significantly damaged during World War II but has since been meticulously restored. The castle now serves as a museum, showcasing royal artifacts, art collections, and historical exhibits.",
+      "location": "Plac Zamkowy 4, 00-277 Warsaw, Poland",
+      "opening_time": "10:00:00",
+      "closing_time": "20:00:00",
+      "price": "10.00",
+      "image": "https://res.cloudinary.com/dp0kcgmnd/image/upload/v1727105513/xqw5gtxi9panym4ivp13.jpg"
+    }
+  },
+  {
+    "model": "tours.location",
+    "pk": 14,
+    "fields": {
+      "name": "Market Square (Rynek)",
+      "country": "Poland",
+      "city": "Warsaw",
+      "description": "Market Square (Rynek) is the central square in the Old Town of Warsaw, Poland. Known for its vibrant atmosphere, historic architecture, and colorful buildings, it serves as a popular destination for both tourists and locals",
+      "location": "Rynek Starego Miasta, 00-272 Warsaw, Poland",
+      "opening_time": null,
+      "closing_time": null,
+      "price": "0.00",
+      "image": "https://res.cloudinary.com/dp0kcgmnd/image/upload/v1727105462/mh79e7q4qqbvlfu7ogbn.jpg"
+    }
+  },
+  {
+    "model": "tours.location",
+    "pk": 15,
+    "fields": {
+      "name": "St. John's Cathedral (Katedra św. Jana)",
+      "country": "Poland",
+      "city": "Warsaw",
+      "description": "St. John's Cathedral (Katedra św. Jana) is a prominent historic church located in the Old Town of Warsaw, Poland. It is known for its Gothic architecture and significant role in the city’s religious and historical events.\r\nThe cathedral, which dates back to the 14th century, features a stunning interior with beautiful stained glass windows and impressive chapels. It is also the site of important ceremonies, including royal weddings and funerals. For up-to-date information on visiting hours or special events, it’s a good idea to check the cathedral's official website or contact them directly.",
+      "location": "Ul. Świętojańska 8, 00-278 Warsaw, Poland",
+      "opening_time": "09:00:00",
+      "closing_time": "17:00:00",
+      "price": "0.00",
+      "image": "https://res.cloudinary.com/dp0kcgmnd/image/upload/v1727105005/hgmbw2hvwixcqtbymymw.jpg"
+    }
+  },
+  {
+    "model": "tours.location",
+    "pk": 16,
+    "fields": {
+      "name": "Barbican (Barbakan)",
+      "country": "Poland",
+      "city": "Warsaw",
+      "description": "Barbican (Barbakan) is a historic defensive structure located in the Old Town of Warsaw, Poland. This impressive fortress was built in the late 15th and early 16th centuries as part of the city's fortifications. It served as a military stronghold and a gatehouse for the entrance to the Old Town.",
+      "location": "ul. Nowomiejska, 00-272 Warsaw, Poland",
+      "opening_time": "10:00:00",
+      "closing_time": "16:00:00",
+      "price": "3.00",
+      "image": "https://res.cloudinary.com/dp0kcgmnd/image/upload/v1727104809/eohgeodr7debxldxcgxr.jpg"
+    }
+  },
+  {
+    "model": "tours.location",
+    "pk": 17,
+    "fields": {
+      "name": "Łazienki Park (Łazienki Królewskie)",
+      "country": "Poland",
+      "city": "Warsaw",
+      "description": "Łazienki Park (Łazienki Królewskie) is a large and historic park in Warsaw, Poland, known for its beautiful gardens, historical buildings, and serene natural landscapes. It was originally designed in the 18th century as a royal residence and parkland.",
+      "location": "Aleje Ujazdowskie 1, 00-478 Warsaw, Poland",
+      "opening_time": "06:00:00",
+      "closing_time": "20:00:00",
+      "price": "0.00",
+      "image": "https://res.cloudinary.com/dp0kcgmnd/image/upload/v1727105551/rthig6x4xb9cqekbpdoa.jpg"
+    }
+  },
+  {
+    "model": "tours.location",
+    "pk": 18,
+    "fields": {
+      "name": "Piłsudski Park (Park Piłsudskiego",
+      "country": "Poland",
+      "city": "Warsaw",
+      "description": "Piłsudski Park (Park Piłsudskiego), also known as Józef Piłsudski Park, is a prominent park located in the heart of Warsaw, Poland. It is named after Józef Piłsudski, a key figure in Polish history and a leader in the country's struggle for independence.",
+      "location": "Aleje Ujazdowskie, 00-478 Warsaw, Poland",
+      "opening_time": "06:00:00",
+      "closing_time": "10:00:00",
+      "price": "0.00",
+      "image": "https://res.cloudinary.com/dp0kcgmnd/image/upload/v1727105310/eczjvsefenzvfzruy2xb.jpg"
+    }
+  },
+  {
+    "model": "tours.tourist",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$870000$jB2SFb5ojQNg5DXhRXvuSU$vzN9uh/VwRMa8GfoV+BZrCaUbtVGxomhPlT+/SJccyg=",
+      "last_login": "2024-09-20T12:59:59.864Z",
+      "is_superuser": true,
+      "username": "lera",
+      "first_name": "",
+      "last_name": "",
+      "email": "lera@admin.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-09-17T11:08:25.893Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "tours.tourist",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$870000$2jybb7RUJ5POzHio1AKFF1$RpsQysAfeSq/GOUhJ0SQAaVQVXIxyCnay0Y/4Fl4KZ0=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-09-17T11:09:41.488Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "tours.tourist",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$870000$NVQ6kcSkPreCuoueYQCvyU$xk8DF5gY2tOOD+dz89hpa/52kAjxZfg1+NBb9Pq0dIY=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "new_user",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-09-17T11:10:40.122Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "tours.tour",
+    "pk": 1,
+    "fields": {
+      "name": "Route for Contemporary and Modern Art",
+      "description": "Rich with prestigious museums, unconventional galleries, and fresh creative talent, Barcelona's contemporary art scene is truly impressive. For those visiting for the first time, trying to see everything in a short time can be overwhelming. This (approximately) 2-hour route will provide an excellent introduction to the subject.\r\n\r\nOur ART route, aptly named \"Modern and Contemporary,\" is a cultural journey through the Catalan capital's modernist heritage, covering not only iconic landmarks like Park Güell but also lesser-known, unique sites.",
+      "duration": "02:00:00",
+      "distance": null,
+      "place": "Spain, Barselona",
+      "location": [
+        3,
+        4,
+        5,
+        6,
+        2,
+        1
+      ]
+    }
+  },
+  {
+    "model": "tours.tour",
+    "pk": 2,
+    "fields": {
+      "name": "Historical Center of Berlin",
+      "description": "Embark on an unforgettable journey through Berlin's historical heart, where the city’s rich past meets its vibrant present.\r\n\r\nStart at Brandenburg Gate, Berlin’s iconic landmark and a symbol of German reunification. As you stand beneath its grand neoclassical columns, you’ll begin to sense the historical significance that makes this place a must-see.\r\n\r\nNext, stroll over to the Reichstag, the seat of the German parliament. Admire its stunning architecture, especially the modern glass dome designed by Sir Norman Foster. For a truly memorable experience, consider booking a tour to ascend the dome and enjoy panoramic views of Berlin’s sprawling urban landscape.\r\n\r\nContinue your walk to the Memorial to the Murdered Jews of Europe. This poignant site, consisting of 2,711 concrete slabs of varying heights, offers a contemplative space to reflect on the Holocaust and its impact. The memorial's stark, minimalist design powerfully conveys the enormity of the tragedy.\r\n\r\nFrom there, make your way to Potsdamer Platz, a vibrant and bustling square that showcases Berlin’s contemporary side. Marvel at the innovative architecture of the Sony Center and explore the surrounding shopping complexes, cafes, and cultural venues.\r\n\r\nConclude your tour at Alexanderplatz, a historic square that’s a blend of old and new Berlin. The square is dominated by the striking Fernsehturm (TV Tower), an iconic feature of the city’s skyline. You might want to take a ride up the tower for a sweeping view of Berlin and its surroundings.\r\n\r\nThis tour covers approximately 4-5 kilometers and can be comfortably completed in 1.5 to 2 hours, allowing you to soak in Berlin’s rich history and modern vibrancy at a leisurely pace. Whether you're a history buff or a culture enthusiast, this route offers a comprehensive glimpse into the essence of Berlin.",
+      "duration": "02:00:00",
+      "distance": 4.5,
+      "place": "Germany, Berlin",
+      "location": [
+        11,
+        7,
+        9,
+        10,
+        8
+      ]
+    }
+  },
+  {
+    "model": "tours.tour",
+    "pk": 3,
+    "fields": {
+      "name": "Historical Center of Warsaw Tour",
+      "description": "Explore the heart of Warsaw on a captivating journey through its historic and picturesque landmarks.\r\n\r\nBegin your adventure in the Old Town (Stare Miasto). This charming district, meticulously restored after World War II, features narrow cobblestone streets, historic buildings, and cozy cafes, offering a glimpse into Warsaw's past and present.\r\n\r\nFrom there, head to the Royal Castle. This grand residence of Polish monarchs boasts opulent rooms and an impressive art collection. Explore the richly decorated interiors that reflect the grandeur of Poland’s royal history.\r\n\r\nContinue your walk to the Market Square (Rynek), the vibrant center of the Old Town. The square is surrounded by colorful townhouses and is home to the iconic Warsaw Mermaid statue. It’s a great spot to relax in one of the many restaurants or browse through local shops.\r\n\r\nNext, visit the Church of St. John. This Gothic church, with its ornate interior and historic significance, offers a serene atmosphere. Don’t miss the opportunity to climb the bell tower for a panoramic view of the Old Town.\r\n\r\nStroll over to the Barbican, a historic defensive structure that once formed part of the city’s fortifications. This well-preserved bastion provides a glimpse into the medieval defensive architecture of Warsaw.\r\n\r\nThen, head to the Royal Łazienki (Łazienki Park). One of Warsaw’s largest and most beautiful parks, it features the stunning Łazienki Palace, surrounded by tranquil gardens, sculptures, and monuments. Enjoy a leisurely walk through this green oasis, which also includes the famous Chopin Monument.\r\n\r\nFinally, visit Piłsudski Park, centrally located and known for its memorial to Józef Piłsudski, a key figure in Polish history. The park is dotted with green avenues, making it a peaceful end to your tour.\r\n\r\nThis route covers approximately 5-6 kilometers and typically takes 2-3 hours, depending on your pace and how much time you spend at each attraction. Whether you're interested in history, architecture, or simply enjoying beautiful parks, this tour offers a comprehensive experience of Warsaw's historical center.",
+      "duration": "02:30:00",
+      "distance": 5.0,
+      "place": "Poland, Warsaw",
+      "location": [
+        16,
+        14,
+        12,
+        18,
+        13,
+        15,
+        17
+      ]
     }
   }
 ]
