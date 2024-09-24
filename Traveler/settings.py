@@ -32,9 +32,13 @@ load_dotenv(BASE_DIR / ".env")  # take environment variables from .env.
 # SECRET_KEY = 'django-insecure-ag0w+#8ka&la+seud%qt8v^$b1(rpgj+$bm-g62(f!=2zvc*!o'
 SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG", "") != "False"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "traveler-2.onrender.com",
+    "127.0.0.1",
+    "localhost",
+]
 
 
 # Application definition
@@ -59,8 +63,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    # 'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
+     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
