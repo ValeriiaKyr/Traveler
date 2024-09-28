@@ -12,7 +12,7 @@ from django.urls import reverse_lazy
 from django.views import generic
 from django.views.generic import FormView
 
-from .forms import (
+from tours.forms import (
     TourCreatForm,
     LocationCreateForm,
     CommentLocationForm,
@@ -21,7 +21,7 @@ from .forms import (
     TourSearchForm,
     RegistrationForm
 )
-from .models import Tourist, Tour, Location
+from tours.models import Tourist, Tour, Location
 
 
 def index(request: HttpRequest) -> HttpResponse:

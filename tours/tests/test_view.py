@@ -2,10 +2,13 @@ from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse
 
-from tours.models import Tour, Location
+from tours.models import Tour, Location, CommentTour, CommentLocation
 
-LOCATION_URL = reverse('tours:locations-list')
-TOUR_URL = reverse('tours:tour-list')
+LOCATION_URL = reverse("tours:locations-list")
+TOUR_URL = reverse("tours:tour-list")
+COMMENT_LOCATION_URL = reverse("tours:add-comment", kwargs={"pk": 1})
+COMMENT_TOUR_URL = reverse("tours:comment", kwargs={"pk": 1})
+REGISTRATION_URL = reverse("tours:register")
 
 
 class TourTests(TestCase):
@@ -80,3 +83,74 @@ class LocationsTests(TestCase):
             list(location_queryset)
         )
         self.assertTemplateUsed(response, "tours/location_list.html")
+
+class CommentLocationTests(TestCase):
+    def setUp(self)-> None:
+        self.user = get_user_model().objects.create_user(
+            username="test",
+            password="test123"
+        )
+        self.location = Location.objects.create(
+            name="test",
+            country="test",
+            city="test",
+            location="test",
+            price="10.00"
+        )
+        self.client.force_login(self.user)
+
+
+    def test_create_comment_for_location(self) -> None:
+        form_data = {
+            "body": "test"
+        }
+        response = self.client.post(
+            COMMENT_LOCATION_URL,
+            data=form_data
+        )
+        self.assertEqual(response.status_code, 302)
+        self.assertTrue(CommentLocation.objects.filter(location=self.location, author=self.user, body="test").exists())
+
+
+class CommentTourTests(TestCase):
+    def setUp(self)-> None:
+        self.user = get_user_model().objects.create_user(
+            username="test",
+            password="test123"
+        )
+        self.location = Location.objects.create(
+            name="test",
+            country="test",
+            city="test",
+            location="test",
+            price="10.00"
+        )
+        self.tour = Tour.objects.create(
+            name="test1",
+            duration="2:00",
+            place="test1",
+        )
+        self.client.force_login(self.user)
+
+
+    def test_create_comment_for_location(self) -> None:
+        form_data = {
+            "body": "test"
+        }
+        response = self.client.post(
+            COMMENT_TOUR_URL,
+            data=form_data
+        )
+        self.assertEqual(response.status_code, 302)
+        self.assertTrue(CommentTour.objects.filter(tour=self.tour, author=self.user, body="test").exists())
+
+
+class RegistrationViewTests(TestCase):
+    def test_registration_success(self):
+        response = self.client.post(REGISTRATION_URL, {
+            "username": "user",
+            "password1": "testpassword123",
+            "password2": "testpassword123",
+        })
+        self.assertEqual(response.status_code, 302)
+        self.assertTrue(get_user_model().objects.filter(username="user").exists())

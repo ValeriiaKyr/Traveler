@@ -13,41 +13,37 @@ class TourCreatForm(forms.ModelForm):
 
     class Meta:
         model = Tour
-        fields = "__all__"
+        fields = ["name", "distance", "duration", "place", "description", "location"]
         widgets = {
             "name":
                 forms.TextInput(
                     attrs={
                         "class": "form-control",
-                        "style": "border: 1px solid #ccc;"
                     }
                 ),
             "distance":
                 forms.NumberInput(
                     attrs={
                         "class": "form-control",
-                        "style": "border: 1px solid #ccc;"
                     }
                 ),
             "duration":
                 forms.TextInput(
                     attrs={
                         "class": "form-control",
-                        "style": "border: 1px solid #ccc;"
                     }
                 ),
             "place":
                 forms.TextInput(
                     attrs={
                         "class": "form-control",
-                        "style": "border: 1px solid #ccc;"
                     }
                 ),
             "description":
                 forms.Textarea(
                     attrs={
                         "class": "form-control",
-                        "style": "border: 1px solid #ccc;", "rows": 4
+                        "rows": 4
                     }
                 ),
         }
@@ -56,62 +52,56 @@ class TourCreatForm(forms.ModelForm):
 class LocationCreateForm(forms.ModelForm):
     class Meta:
         model = Location
-        fields = "__all__"
+        # fields = "__all__"
+        fields = ["name", "country", "city", "location", "opening_time", "closing_time", "price", "description"]
+
         widgets = {
             "name":
                 forms.TextInput(
                     attrs={
                         "class": "form-control",
-                        "style": "border: 1px solid #ccc;"
                     }
                 ),
             "country":
                 forms.TextInput(
                     attrs={
                         "class": "form-control",
-                        "style": "border: 1px solid #ccc;"
                     }
                 ),
             "city":
                 forms.TextInput(
                     attrs={
                         "class": "form-control",
-                        "style": "border: 1px solid #ccc;"
                     }
                 ),
             "location":
                 forms.TextInput(
                     attrs={
                         "class": "form-control",
-                        "style": "border: 1px solid #ccc;"
                     }
                 ),
             "opening_time":
                 forms.TimeInput(
                     attrs={
                         "class": "form-control",
-                        "style": "border: 1px solid #ccc;"
                     }
                 ),
             "closing_time":
                 forms.TimeInput(
                     attrs={
                         "class": "form-control",
-                        "style": "border: 1px solid #ccc;"
                     }
                 ),
             "price":
                 forms.NumberInput(
                     attrs={
                         "class": "form-control",
-                        "style": "border: 1px solid #ccc;"
                     }
                 ),
             "description":
                 forms.Textarea(
                     attrs={
                         "class": "form-control",
-                        "style": "border: 1px solid #ccc;",
                         "rows": 4
                     }
                 ),
@@ -167,8 +157,8 @@ class RegistrationForm(UserCreationForm):
     class Meta:
         model = get_user_model()
         fields = (
-          'username',
-          'email',
+          "username",
+          "email",
           'first_name',
           'last_name',
           'password1',

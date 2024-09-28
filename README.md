@@ -30,6 +30,9 @@ Use these credentials to log in to the web server:
 - username: user
 - password: user12345
 
+
+# Project Overview
+
 ## Features
 
 - **Explore Locations and Walking Tours**: Browse through various locations and walking tours in cities around the world. Discover places that interest you, and gain insights from others' travel experiences.
@@ -38,3 +41,6 @@ Use these credentials to log in to the web server:
   
 - **User Registration**: If you don't have an account yet, you can easily sign up and gain access to all the features, including creating routes, commenting, and more.
 
+
+## Architecture Diagram
+![Project Architecture Diagram](static/diagram.png)
