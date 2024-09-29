@@ -50,9 +50,10 @@ class TourCreateForm(forms.ModelForm):
 
 
 class LocationCreateForm(forms.ModelForm):
+    image = forms.ImageField(required=False, label="Add Image")
+
     class Meta:
         model = Location
-        # fields = "__all__"
         fields = ["name", "country", "city", "location", "opening_time", "closing_time", "price", "description", "image"]
 
         widgets = {
