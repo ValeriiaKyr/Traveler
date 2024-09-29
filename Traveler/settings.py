@@ -171,7 +171,7 @@ LOGOUT_REDIRECT_URL = "/"
 cloudinary.config(
     cloud_name="dp0kcgmnd",
     api_key="656842341975747",
-    api_secret="svPKAv7wO8B20VslQ5WNcleRHEU",
+    api_secret=os.getenv("api_secret"),
     secure=True,
 )
 

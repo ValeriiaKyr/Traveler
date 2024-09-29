@@ -53,7 +53,7 @@ class LocationCreateForm(forms.ModelForm):
     class Meta:
         model = Location
         # fields = "__all__"
-        fields = ["name", "country", "city", "location", "opening_time", "closing_time", "price", "description"]
+        fields = ["name", "country", "city", "location", "opening_time", "closing_time", "price", "description", "image"]
 
         widgets = {
             "name":
