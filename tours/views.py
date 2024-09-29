@@ -96,10 +96,6 @@ class LocationCreateView(LoginRequiredMixin, generic.CreateView):
     success_url = reverse_lazy("tours:locations-list")
     template_name = "tours/location_form.html"
 
-    def form_valid(self, form: LocationCreateForm) -> HttpResponse:
-        form.instance.author = self.request.user
-        return super().form_valid(form)
-
 
 class LocationUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Location
@@ -135,7 +131,6 @@ class CommentLocationCreateView(LoginRequiredMixin, generic.CreateView):
             comment.author = request.user
             comment.location = location
             comment.save()
-            return redirect(location.get_absolute_url())
         return redirect(location.get_absolute_url())
 
 
@@ -143,13 +138,11 @@ class CommentTourCreateView(LoginRequiredMixin, generic.CreateView):
     def post(self, request: HttpRequest, *args, **kwargs) -> HttpResponse:
         tour = get_object_or_404(Tour, id=kwargs["pk"])
         form = CommentTourForm(request.POST)
-
         if form.is_valid():
             comment = form.save(commit=False)
             comment.author = request.user
             comment.tour = tour
             comment.save()
-            return redirect(tour.get_absolute_url())
         return redirect(tour.get_absolute_url())
 
 
