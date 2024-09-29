@@ -96,6 +96,10 @@ class LocationCreateView(LoginRequiredMixin, generic.CreateView):
     success_url = reverse_lazy("tours:locations-list")
     template_name = "tours/location_form.html"
 
+    def form_valid(self, form: LocationCreateForm) -> HttpResponse:
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
 
 class LocationUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Location
