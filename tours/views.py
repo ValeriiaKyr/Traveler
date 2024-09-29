@@ -13,7 +13,7 @@ from django.views import generic
 from django.views.generic import FormView
 
 from tours.forms import (
-    TourCreatForm,
+    TourCreateForm,
     LocationCreateForm,
     CommentLocationForm,
     CommentTourForm,
@@ -25,11 +25,11 @@ from tours.models import Tourist, Tour, Location
 
 
 def index(request: HttpRequest) -> HttpResponse:
-    num_turists = Tourist.objects.count()
+    num_tourists = Tourist.objects.count()
     num_loc = Location.objects.count()
     num_tour = Tour.objects.count()
     context = {
-        "num_turists": num_turists,
+        "num_tourists": num_tourists,
         "num_loc": num_loc,
         "num_tour": num_tour,
     }
@@ -85,7 +85,7 @@ class TourDetailView(generic.DetailView):
 
 class TourCreateView(LoginRequiredMixin, generic.CreateView):
     model = Tour
-    form_class = TourCreatForm
+    form_class = TourCreateForm
     success_url = reverse_lazy("tours:tour-list")
     template_name = "tours/tour_form.html"
 
@@ -106,7 +106,7 @@ class LocationUpdateView(LoginRequiredMixin, generic.UpdateView):
 
 class TourUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Tour
-    form_class = TourCreatForm
+    form_class = TourCreateForm
     success_url = reverse_lazy("tours:tour-list")
     template_name = "tours/tour_form.html"
 

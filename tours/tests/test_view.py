@@ -21,11 +21,11 @@ class TourTests(TestCase):
 
     def test_retrieve_tour(self) -> None:
         location = Location.objects.create(
-            name='test',
-            country='test',
-            city='test',
-            location='test',
-            price='10.00'
+            name="test",
+            country="test",
+            city="test",
+            location="test",
+            price="10.00"
         )
 
         tour1 = Tour.objects.create(

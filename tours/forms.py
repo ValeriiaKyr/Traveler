@@ -5,7 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 from tours.models import Location, Tour, CommentLocation, CommentTour
 
 
-class TourCreatForm(forms.ModelForm):
+class TourCreateForm(forms.ModelForm):
     location = forms.ModelMultipleChoiceField(
         queryset=Location.objects.all(),
         widget=forms.CheckboxSelectMultiple,
@@ -159,8 +159,8 @@ class RegistrationForm(UserCreationForm):
         fields = (
           "username",
           "email",
-          'first_name',
-          'last_name',
-          'password1',
-          'password2',
+          "first_name",
+          "last_name",
+          "password1",
+          "password2",
         )

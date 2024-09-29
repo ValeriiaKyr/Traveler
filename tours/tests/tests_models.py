@@ -67,7 +67,7 @@ class ModelsTests(TestCase):
             active=True,
         )
 
-        self.assertEqual(str(comment), f'{comment.author.username} - {comment.location.name}')
+        self.assertEqual(str(comment), f"{comment.author.username} - {comment.location.name}")
 
     def test_comment_tour_str(self):
         location = Location.objects.create(
@@ -98,6 +98,6 @@ class ModelsTests(TestCase):
             body="test",
             active=True,
         )
-        self.assertEqual(str(comment), f'{comment.author.username} - {comment.tour.name}')
+        self.assertEqual(str(comment), f"{comment.author.username} - {comment.tour.name}")
 
 
