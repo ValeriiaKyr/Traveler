@@ -56,12 +56,6 @@
                 </ul>
               </li>
 
-              <!-- Sign Up Button -->
-              <li class="nav-item my-auto ms-3">
-                <a href="{% url 'tours:register' %}" target="_blank" class="btn btn-sm bg-gradient-primary mb-0">Sign up</a>
-              </li>
-
-              <!-- Authentication Links -->
               <li class="nav-item ms-lg-auto">
                 {% if user.is_authenticated %}
                   <form method="post" action="{% url 'logout' %}" class="d-inline">
@@ -73,6 +67,9 @@
                   </form>
                 
                 {% else %}
+                    <li class="nav-item my-auto ms-3">
+                      <a href="{% url 'tours:register' %}" target="_blank" class="btn btn-sm bg-gradient-primary mb-0">Sign up</a>
+                    </li>
                   <a class="nav-link nav-link-icon me-2" href="{% url 'login' %}">
                     <i class="fa fa-sign-out me-1"></i>
                     <p class="d-inline text-sm z-index-1 font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom">Login</p>
