@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 
-from tours.models import Tour, Location, CommentLocation, CommentTour
+from tours.models import Tour, Location, Comment
 
 
 class ModelsTests(TestCase):
@@ -44,7 +44,7 @@ class ModelsTests(TestCase):
             f"{tourist.username}"
         )
 
-    def test_comment_loction_str(self):
+    def test_comment_location_str(self):
         location = Location.objects.create(
             name="test",
             country="test",
@@ -60,14 +60,15 @@ class ModelsTests(TestCase):
         )
 
 
-        comment = CommentLocation.objects.create(
+        comment = Comment.objects.create(
             location=location,
             author=tourist,
             body="test",
             active=True,
         )
 
-        self.assertEqual(str(comment), f"{comment.author.username} - {comment.location.name}")
+        self.assertEqual(str(comment), f"{comment.author.username} - Location: {comment.location.name}")
+        # self.assertEqual(str(comment), f"{comment.author.username} - {comment.location.name}")
 
     def test_comment_tour_str(self):
         location = Location.objects.create(
@@ -92,12 +93,13 @@ class ModelsTests(TestCase):
             last_name="test_last",
         )
 
-        comment = CommentTour.objects.create(
+        comment = Comment.objects.create(
             tour=tour,
             author=tourist,
             body="test",
             active=True,
         )
-        self.assertEqual(str(comment), f"{comment.author.username} - {comment.tour.name}")
+        self.assertEqual(str(comment), f"{comment.author.username} - Tour: {comment.tour.name}")
+        # self.assertEqual(str(comment), f"{comment.author.username} - {comment.tour.name}")
 
 

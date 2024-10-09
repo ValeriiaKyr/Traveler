@@ -2,12 +2,12 @@ from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse
 
-from tours.models import Tour, Location, CommentTour, CommentLocation
+from tours.models import Tour, Location, Comment
 
 LOCATION_URL = reverse("tours:locations-list")
 TOUR_URL = reverse("tours:tour-list")
-COMMENT_LOCATION_URL = reverse("tours:add-comment", kwargs={"pk": 1})
-COMMENT_TOUR_URL = reverse("tours:comment", kwargs={"pk": 1})
+# COMMENT_LOCATION_URL = reverse("tours:add-location-comment", kwargs={"location_id": location.id})
+# COMMENT_TOUR_URL = reverse("tours:add-tour-comment", kwargs={"pk": 1})
 REGISTRATION_URL = reverse("tours:register")
 
 
@@ -105,11 +105,12 @@ class CommentLocationTests(TestCase):
             "body": "test"
         }
         response = self.client.post(
-            COMMENT_LOCATION_URL,
+            # COMMENT_LOCATION_URL,
+            reverse("tours:add-location-comment", kwargs={"location_id": self.location.id}),
             data=form_data
         )
         self.assertEqual(response.status_code, 302)
-        self.assertTrue(CommentLocation.objects.filter(location=self.location, author=self.user, body="test").exists())
+        self.assertTrue(Comment.objects.filter(location=self.location, author=self.user, body="test").exists())
 
 
 class CommentTourTests(TestCase):
@@ -138,11 +139,11 @@ class CommentTourTests(TestCase):
             "body": "test"
         }
         response = self.client.post(
-            COMMENT_TOUR_URL,
+            reverse("tours:add-tour-comment", kwargs={"tour_id": self.tour.id}),
             data=form_data
         )
         self.assertEqual(response.status_code, 302)
-        self.assertTrue(CommentTour.objects.filter(tour=self.tour, author=self.user, body="test").exists())
+        self.assertTrue(Comment.objects.filter(tour=self.tour, author=self.user, body="test").exists())
 
 
 class RegistrationViewTests(TestCase):
