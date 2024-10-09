@@ -1,0 +1,82 @@
+{% extends "index.html" %}
+{% include "includes/header.html" %}
+{% load location_tour_filter %}
+{% block content %}
+  <section class="py-9">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h1 class="display-4">{{ tour.name }}</h1>
+        <p class="lead">Detailed information about the selected tour.</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8 mb-4">
+          <div class="card border shadow-sm">
+            <div class="p-4">
+              <h2 class="text-primary mb-3">Tour Details</h2>
+              <p><strong>Place:</strong> {{ tour.place }}</p>
+              <p><strong>Distance:</strong> {{ tour.distance }} km</p>
+              <p><strong>Duration:</strong> {{  tour.duration }} hours</p>
+              <p><strong>Locations you will visit on this tour:</strong> {{ tour|join_locations }}</p>
+              <p><strong>Description:</strong></p>
+              <p class="text-secondary">{{ tour.description }}</p>
+              {% if user.is_authenticated %}
+                  <button type="button"  class="btn bg-gradient-primary w-auto me-2"><a href="{% url "tours:tour-update" pk=tour.id %}" style="color: whitesmoke">Update</a></button>
+                <button type="button" class="btn bg-gradient-secondary w-auto me-2"><a href="{% url "tours:tour-delete" pk=tour.id %}" style="color: whitesmoke">Delete</a></button>
+
+              {% endif %}            </div>
+          </div>
+        </div>
+
+        {% if user.is_authenticated %}
+        <div class="col-lg-8 mb-4">
+          <div class="card border shadow-sm">
+            <div class="p-3">
+              <h2 class="text-primary mb-3">Leave Your Impression</h2>
+              <div class="form-outline mb-4" id="comments">
+                <form method="post" action="{% url 'tours:add-tour-comment' tour.id %}">
+                  {% csrf_token %}
+                  <label for="id_body">Add your comment:</label>
+                  <textarea name="body" cols="40" rows="4" placeholder="Share your thoughts in the comments..." 
+                            class="form-control mt-2 border border-primary rounded p-2" 
+                            required="" id="id_body"></textarea>
+                  <button type="submit" class="btn btn-info mt-2">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+
+        <div class="col-lg-8 mb-4">
+          <div class="card border shadow-sm">
+            <div class="p-3">
+              <h2 class="text-primary mb-3">Impressions</h2>
+              {% if tour.comments_tour.all %}
+                {% for comment in tour.comments_tour.all %}
+                  <div class="card mb-4">
+                    <div class="card-body">
+                      <p class="small text-muted mb-2">{{ comment.created|timesince }} ago</p>
+                      <p>{{ comment.body }}</p>
+                      <div class="d-flex justify-content-between">
+                        <div class="d-flex flex-row align-items-center">
+                          <i class="fas fa-user mx-1"></i>
+                          <p class="small mb-0 ms-2">@{{ comment.author.username }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                {% endfor %}
+              {% else %}
+                <p>No impressions yet for this tour. Be the first to leave one!</p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% include "includes/footer.html" %}

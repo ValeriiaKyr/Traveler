@@ -1,0 +1,30 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+}
+
+h1 {
+    color: #343a40;
+}
+
+.navbar-brand {
+    font-family: 'Impact', sans-serif;
+}
+
+.card-title {
+    color: #343a40;
+    /*color: #007bff;*/
+}
+
+footer {
+    background-color: #343a40;
+}
+
+footer a {
+    color: #ffffff;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+

@@ -1,0 +1,107 @@
+{% extends "index.html" %}
+{% include "includes/header.html" %}
+{% block content %}
+  <section class="py-9">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h1 class="display-4">{{ location.name }}</h1>
+        <p class="lead">Detailed information about the selected location.</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8 mb-4">
+          <div class="card border shadow-sm">
+            <div class="row g-0">
+              <div class="col-md-4">
+                {% if location.image %}
+                  <img src="{{ location.image.url }}" alt="{{ location.name }}" class="img-fluid h-100 w-100 rounded-start" style="object-fit: cover;">
+                {% else %}
+                  <div class="d-flex justify-content-center align-items-center bg-secondary" style="height: 100%; width: 100%;">
+                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                      <title>Placeholder</title>
+                      <rect width="100%" height="100%" fill="#55595c"></rect>
+                      <text x="50%" y="50%" fill="#eceeef" dy=".3em">No picture</text>
+                    </svg>
+                  </div>
+                {% endif %}
+              </div>
+
+              <div class="col-md-8">
+                <div class="p-3">
+                  <h2 class="text-primary mb-3">Location Details</h2>
+                  <p><strong>Country:</strong> {{ location.country }}</p>
+                  <p><strong>City:</strong> {{ location.city }}</p>
+                  <p><strong>Location:</strong> {{ location.location }}</p>
+                  <p><strong>Description:</strong> {{ location.description }}</p>
+                  {% if location.opening_time and location.closing_time %}
+                    <p><strong>Working hours:</strong> {{ location.opening_time }} - {{ location.closing_time }}</p>
+                  {% endif %}
+                  {% if location.price != 0 %}
+                    <p><strong>Cost of visit:</strong> {{ location.price }}€</p>
+                  {% endif %}
+                  {% if user.is_authenticated %}
+                    <button type="button" class="btn bg-gradient-primary w-auto me-2">
+                      <a href="{% url 'tours:locations-update' pk=location.id %}">Update</a>
+                    </button>
+                    <button type="button" class="btn bg-gradient-secondary w-auto me-2">
+                      <a href="{% url 'tours:locations-delete' pk=location.id %}" style="color: whitesmoke">Delete</a>
+                    </button>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% if user.is_authenticated %}
+        <div class="col-lg-8 mb-4">
+          <div class="card border shadow-sm">
+            <div class="p-3">
+              <h2 class="text-primary mb-3">Leave Your Impression</h2>
+              <div class="form-outline mb-4" id="comments">
+                <form method="post" action="{% url 'tours:add-location-comment' location.id %}">
+                  {% csrf_token %}
+                  <label for="id_body">Add your comment:</label>
+                  <textarea name="body" cols="40" rows="4" placeholder="Share your thoughts in the comments..." 
+                            class="form-control mt-2 border border-primary rounded p-2" 
+                            required="" id="id_body"></textarea>
+                  <button type="submit" class="btn btn-info mt-2">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        <div class="col-lg-8 mb-4">
+          <div class="card border shadow-sm">
+            <div class="p-3">
+              <h2 class="text-primary mb-3">Impressions</h2>
+              {% if location.comments_location.all %}
+                {% for comment in location.comments_location.all %}
+                  <div class="card mb-4">
+                    <div class="card-body">
+                      <p class="small text-muted mb-2">{{ comment.created|timesince }} ago</p>
+                      <p>{{ comment.body }}</p>
+                      <div class="d-flex justify-content-between">
+                        <div class="d-flex flex-row align-items-center">
+                          <i class="fas fa-user mx-1"></i>
+                          <p class="small mb-0 ms-2">@{{ comment.author.username }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                {% endfor %}
+              {% else %}
+                <p>No impressions yet for this location. Be the first to leave one!</p>
+              {% endif %}
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% include "includes/footer.html" %}
