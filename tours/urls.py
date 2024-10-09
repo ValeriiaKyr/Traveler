@@ -12,9 +12,7 @@ from tours.views import (
     TourUpdateView,
     LocationDeleteView,
     TourDeleteView,
-    CommentLocationCreateView,
-    CommentTourCreateView,
-    RegistrationView
+    RegistrationView, CommentCreateView
 )
 
 urlpatterns = [
@@ -54,14 +52,14 @@ urlpatterns = [
         name="tour-update"
     ),
     path(
-        "locations/<int:pk>/add_comment/",
-        CommentLocationCreateView.as_view(),
-        name="add-comment"
+        "locations/<int:location_id>/add_comment/",
+        CommentCreateView.as_view(),
+        name="add-location-comment"
     ),
     path(
-        "tours/<int:pk>/add_comment/",
-        CommentTourCreateView.as_view(),
-        name="comment"
+        "tours/<int:tour_id>/add_comment/",
+        CommentCreateView.as_view(),
+        name="add-tour-comment"
     ),
     path("register/", RegistrationView.as_view(), name="register"),
 

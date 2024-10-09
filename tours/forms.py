@@ -2,7 +2,11 @@ from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
 
-from tours.models import Location, Tour, CommentLocation, CommentTour
+from tours.models import (
+    Location,
+    Tour,
+    Comment
+)
 
 
 class TourCreateForm(forms.ModelForm):
@@ -109,18 +113,6 @@ class LocationCreateForm(forms.ModelForm):
         }
 
 
-class CommentLocationForm(forms.ModelForm):
-    class Meta:
-        model = CommentLocation
-        fields = ["body"]
-
-
-class CommentTourForm(forms.ModelForm):
-    class Meta:
-        model = CommentTour
-        fields = ["body"]
-
-
 class LocationSearchForm(forms.Form):
     name = forms.CharField(
         max_length=255,
@@ -165,3 +157,9 @@ class RegistrationForm(UserCreationForm):
           "password1",
           "password2",
         )
+
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ["body"]

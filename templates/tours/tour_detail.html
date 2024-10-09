@@ -34,7 +34,7 @@
             <div class="p-3">
               <h2 class="text-primary mb-3">Leave Your Impression</h2>
               <div class="form-outline mb-4" id="comments">
-                <form method="post" action="{% url 'tours:comment' tour.id %}">
+                <form method="post" action="{% url 'tours:add-tour-comment' tour.id %}">
                   {% csrf_token %}
                   <label for="id_body">Add your comment:</label>
                   <textarea name="body" cols="40" rows="4" placeholder="Share your thoughts in the comments..." 
@@ -52,8 +52,8 @@
           <div class="card border shadow-sm">
             <div class="p-3">
               <h2 class="text-primary mb-3">Impressions</h2>
-              {% if tour.tour_comments.all %}
-                {% for comment in tour.tour_comments.all %}
+              {% if tour.comments_tour.all %}
+                {% for comment in tour.comments_tour.all %}
                   <div class="card mb-4">
                     <div class="card-body">
                       <p class="small text-muted mb-2">{{ comment.created|timesince }} ago</p>

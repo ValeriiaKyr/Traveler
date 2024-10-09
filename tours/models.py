@@ -51,41 +51,33 @@ class Tour(models.Model):
         return reverse("tours:tour-detail", args=[str(self.id)])
 
 
-class CommentLocation(models.Model):
+class Comment(models.Model):
+    author = models.ForeignKey(
+        Tourist,
+        on_delete=models.CASCADE,
+        related_name="comments_author"
+    )
+    body = models.TextField(verbose_name="Content")
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+    active = models.BooleanField(default=True)
     location = models.ForeignKey(
         Location,
         on_delete=models.CASCADE,
-        related_name="comments"
+        related_name="comments_location",
+        null=True,
+        blank=True
     )
-    author = models.ForeignKey(
-        Tourist,
-        on_delete=models.CASCADE,
-        related_name="comments"
-    )
-    body = models.TextField(verbose_name="Content")
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
-    active = models.BooleanField(default=True)
-
-    def __str__(self) -> str:
-        return f"{self.author.username} - {self.location.name}"
-
-
-class CommentTour(models.Model):
     tour = models.ForeignKey(
         Tour,
         on_delete=models.CASCADE,
-        related_name="tour_comments"
+        related_name="comments_tour",
+        null=True,
+        blank=True
     )
-    author = models.ForeignKey(
-        Tourist,
-        on_delete=models.CASCADE,
-        related_name="tour_comments"
-    )
-    body = models.TextField(verbose_name="Content")
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
-    active = models.BooleanField(default=True)
 
     def __str__(self) -> str:
-        return f"{self.author.username} - {self.tour.name}"
+        if self.location:
+            return f"{self.author.username} - Location: {self.location.name}"
+        elif self.tour:
+            return f"{self.author.username} - Tour: {self.tour.name}"

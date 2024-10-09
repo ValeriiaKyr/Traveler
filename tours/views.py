@@ -15,13 +15,12 @@ from django.views.generic import FormView
 from tours.forms import (
     TourCreateForm,
     LocationCreateForm,
-    CommentLocationForm,
-    CommentTourForm,
     LocationSearchForm,
     TourSearchForm,
-    RegistrationForm
+    RegistrationForm,
+    CommentForm
 )
-from tours.models import Tourist, Tour, Location
+from tours.models import Tourist, Tour, Location, Comment
 
 
 def index(request: HttpRequest) -> HttpResponse:
@@ -58,6 +57,7 @@ class LocationListView(generic.ListView):
 
 class LocationDetailView(generic.DetailView):
     model = Location
+
 
 class TourListView(generic.ListView):
     model = Tour
@@ -121,29 +121,28 @@ class TourDeleteView(LoginRequiredMixin, generic.DeleteView):
     success_url = reverse_lazy("tours:tour-list")
 
 
-class CommentLocationCreateView(LoginRequiredMixin, generic.CreateView):
+class CommentCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Comment
+    form_class = CommentForm
+
     def post(self, request: HttpRequest, *args, **kwargs) -> HttpResponse:
-        location = get_object_or_404(Location, id=kwargs["pk"])
-        form = CommentLocationForm(request.POST)
+        form = self.form_class(request.POST)
+        comment = form.save(commit=False)
+        comment.author = request.user
+
+        if "location_id" in kwargs:
+            comment.location = get_object_or_404(
+                Location,
+                pk=kwargs["location_id"]
+            )
+            url = comment.location.get_absolute_url()
+        elif "tour_id" in kwargs:
+            comment.tour = get_object_or_404(Tour, pk=kwargs["tour_id"])
+            url = comment.tour.get_absolute_url()
 
         if form.is_valid():
-            comment = form.save(commit=False)
-            comment.author = request.user
-            comment.location = location
             comment.save()
-        return redirect(location.get_absolute_url())
-
-
-class CommentTourCreateView(LoginRequiredMixin, generic.CreateView):
-    def post(self, request: HttpRequest, *args, **kwargs) -> HttpResponse:
-        tour = get_object_or_404(Tour, id=kwargs["pk"])
-        form = CommentTourForm(request.POST)
-        if form.is_valid():
-            comment = form.save(commit=False)
-            comment.author = request.user
-            comment.tour = tour
-            comment.save()
-        return redirect(tour.get_absolute_url())
+        return redirect(url)
 
 
 class RegistrationView(FormView):
