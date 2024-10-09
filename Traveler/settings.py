@@ -170,10 +170,10 @@ LOGOUT_REDIRECT_URL = "/"
 
 
 cloudinary.config(
-    cloud_name="dp0kcgmnd",
-    api_key="656842341975747",
+    cloud_name=os.getenv("cloud_name"),
+    api_key=os.getenv("api_key"),
     api_secret=os.getenv("api_secret"),
-    secure=True,
+    secure=os.getenv("secure"),
 )
 
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
