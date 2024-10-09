@@ -17,7 +17,14 @@ class TourCreateForm(forms.ModelForm):
 
     class Meta:
         model = Tour
-        fields = ["name", "distance", "duration", "place", "description", "location"]
+        fields = [
+            "name",
+            "distance",
+            "duration",
+            "place",
+            "description",
+            "location"
+        ]
         widgets = {
             "name":
                 forms.TextInput(
@@ -58,7 +65,17 @@ class LocationCreateForm(forms.ModelForm):
 
     class Meta:
         model = Location
-        fields = ["name", "country", "city", "location", "opening_time", "closing_time", "price", "description", "image"]
+        fields = [
+            "name",
+            "country",
+            "city",
+            "location",
+            "opening_time",
+            "closing_time",
+            "price",
+            "description",
+            "image"
+        ]
 
         widgets = {
             "name":

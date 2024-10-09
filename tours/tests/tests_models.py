@@ -30,7 +30,10 @@ class ModelsTests(TestCase):
             location="test",
             price="10.00"
         )
-        self.assertEqual(str(location), f"{location.name} in {location.country}, {location.city}")
+        self.assertEqual(
+            str(location),
+            f"{location.name} in {location.country}, {location.city}"
+        )
 
     def test_tourist_str(self):
         tourist = get_user_model().objects.create(
@@ -59,7 +62,6 @@ class ModelsTests(TestCase):
             last_name="test_last",
         )
 
-
         comment = Comment.objects.create(
             location=location,
             author=tourist,
@@ -67,8 +69,10 @@ class ModelsTests(TestCase):
             active=True,
         )
 
-        self.assertEqual(str(comment), f"{comment.author.username} - Location: {comment.location.name}")
-        # self.assertEqual(str(comment), f"{comment.author.username} - {comment.location.name}")
+        self.assertEqual(
+            str(comment),
+            f"{comment.author.username} - Location: {comment.location.name}"
+        )
 
     def test_comment_tour_str(self):
         location = Location.objects.create(
@@ -99,7 +103,7 @@ class ModelsTests(TestCase):
             body="test",
             active=True,
         )
-        self.assertEqual(str(comment), f"{comment.author.username} - Tour: {comment.tour.name}")
-        # self.assertEqual(str(comment), f"{comment.author.username} - {comment.tour.name}")
-
-
+        self.assertEqual(
+            str(comment),
+            f"{comment.author.username} - Tour: {comment.tour.name}"
+        )
