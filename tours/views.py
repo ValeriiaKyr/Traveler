@@ -82,6 +82,8 @@ class TourListView(generic.ListView):
 class TourDetailView(generic.DetailView):
     model = Tour
 
+    def get_queryset(self) -> QuerySet:
+        return Tour.objects.prefetch_related("comments_tour").all()
 
 class TourCreateView(LoginRequiredMixin, generic.CreateView):
     model = Tour
@@ -114,6 +116,9 @@ class TourUpdateView(LoginRequiredMixin, generic.UpdateView):
 class LocationDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Location
     success_url = reverse_lazy("tours:locations-list")
+
+    def get_queryset(self) -> QuerySet:
+        return Location.objects.prefetch_related("comments_location").all()
 
 
 class TourDeleteView(LoginRequiredMixin, generic.DeleteView):
