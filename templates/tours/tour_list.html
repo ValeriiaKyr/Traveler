@@ -1,0 +1,67 @@
+{% extends "index.html" %}
+{% include "includes/header.html" %}
+{% load crispy_forms_filters %}
+{% load location_tour_filter %}
+{% block content %}
+  <section class="py-9">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h1 class="display-4">Tours</h1>
+      
+      <form class="form-inline p-2 mb-4" style="border: 1px solid #ddd; border-radius: 5px; background-color: #f5f5f5;">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-md-10 mb-2 mb-md-0">
+            {{ tour_search_form|crispy }}
+          </div>
+          <div class="col-md-2 text-center">
+            <button class="btn btn-primary w-100" type="submit">
+              <i class="fas fa-search"></i> Search
+            </button>
+          </div>
+        </div>
+      </form>
+      
+        <p class="lead">Here you can see all the tours that interest you. Do not forget to leave an impression of the chosen location so that in the future people can also pay attention to it.</p>
+        {% if user.is_authenticated %}
+          <button type="button"  class="btn bg-gradient-primary w-auto me-2"><a href="{% url "tours:tour-create" %}">Create New</a></button>
+        {% endif %}
+      </div>
+
+      {% if tour_list %}
+        <div class="row">
+          {% for tour in tour_list %}
+            <div class="col-12 mb-4">
+              <div class="card border shadow-sm w-100">
+                <div class="row g-0">
+                  <div class="col-12 d-flex align-items-center justify-content-center">
+                    <h1 class="text-primary text-center w-100 p-4" style="font-family: 'Impact', sans-serif;">
+                      {{ tour.name }}
+                    </h1>
+                  </div>
+                </div>
+                <div class="row g-0">
+                  <div class="col p-4">
+                    <strong class="d-block text-primary">Country: {{ tour.place }}</strong>
+                    <strong class="d-block text-primary">Location: {{ tour|join_locations }}</strong>
+                    <p class="text-secondary mb-3">
+                      <i>{{ tour.description|truncatewords:25 }}</i>
+                    </p>
+                    <a href="{{ tour.get_absolute_url }}" class="text-primary icon-move-right">Continue reading
+                      <i class="fas fa-arrow-right text-sm ms-1"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="d-flex justify-content-center">
+          <h2>No tours yet</h2>
+        </div>
+      {% endif %}
+
+      {% include "includes/pagination.html" %}
+    </div>
+  </section>
+{% endblock %}
