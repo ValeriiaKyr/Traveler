@@ -46,11 +46,15 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "tours",
+
+    # External libraries
     "crispy_forms",
     "crispy_bootstrap4",
     "cloudinary",
     "cloudinary_storage",
+
+    # Custom apps
+    "tours",
 ]
 
 MIDDLEWARE = [

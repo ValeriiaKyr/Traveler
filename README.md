@@ -13,23 +13,37 @@ To get started with the Traveler application, follow these steps:
 - Clone the repository:
 https://github.com/ValeriiaKyr/Traveler
 
+
+- Create a .env file from env.sample and fill in your configuration
+
+
 - Move into the project directory:
+```bash
 cd Traveler
-
+```
 - Install the required dependencies:
+```bash
 pip install -r requirements.txt
-
+```
 - Apply the database migrations:
+```bash
 python manage.py migrate
-
+```
 - Start the development server:
+```bash
 python manage.py runserver
+```
 
-Use these credentials to log in to the web server:
+#### Use these credentials to log in to the web server:
 
 - username: user
 - password: user12345
 
+#### Required Versions
+
+- Python: > 3.10
+- Django: 5.1
+- Other dependencies: Check requirements.txt for specific version requirements.
 
 # Project Overview
 
